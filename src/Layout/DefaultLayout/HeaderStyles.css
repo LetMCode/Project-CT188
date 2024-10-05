@@ -1,0 +1,61 @@
+header{
+    width: 100%;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1320px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: #fff;
+}
+ul{
+    display: flex;
+    align-items: center;
+}
+
+.item-page{
+    padding: 10px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.item-page:after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -15px;
+    left: 0;
+    background-color: #000;
+    transition: width 300ms ease-in-out;
+}
+.item-page:hover::after{
+    width: 100%;
+}
+
+@keyframes lineOfItem{
+    from {
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+.item-page__action{
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.btn__signUp{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn__signUp:active{
+    background-color: #ccc;
+}

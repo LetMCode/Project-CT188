@@ -1,0 +1,36 @@
+footer{
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+footer * {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.footer{
+    background-color: #000;
+    padding-top: 52px;
+    padding-bottom: 32px;
+}
+
+.list-footer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.logo-footer{
+    max-width: 135px;
+}
+
+.item-footer__center{
+    display: flex;
+    justify-content: space-around;
+}
+
+.item-footer__center-content ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
