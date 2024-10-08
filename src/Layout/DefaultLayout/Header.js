@@ -4,7 +4,7 @@ function Header (){
     const html = `
     <div class="container">
             <div class="header">
-                <a href="../../../index.html" class="logo-link">
+                <a href="/" class="logo-link">
                     <img src="../../assets/images/HomeIMG/logo.svg"/ alt="" class="logo-pages">
                 </a>
                 <ul class="list-pages">
@@ -23,7 +23,7 @@ function Header (){
                 </ul>
                 <ul class="list-actions">
                     <li class="item-page__action">
-                        <a href="../Cart/index.html" class="item-label">
+                        <a href="../Cart/index.html" class="item-label icon-cart">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                     </li>

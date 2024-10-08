@@ -55,18 +55,19 @@ ul{
     padding: 8px 5px;
     margin: 0 5px;
 }
-
+.icon-cart:active{
+    opacity: 0.6;
+}
 .btn__signUp{
     border: 2px solid #ccc;
     border-radius: 4px;
+    cursor: pointer;
 }
 .item-label{
     padding: 5px;
 }
 
-.btn__signUp:hover{
 
-}
 
 .btn__signUp:active{
     background-color: #ccc;
