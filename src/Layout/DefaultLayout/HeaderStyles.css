@@ -1,26 +1,40 @@
 header{
+    z-index: 999;
+    background-color: var(--primary-color__background);
+    box-shadow:0 0 10px 0 rgba(0,0,0,.2);
+    position: fixed;
     width: 100%;
+    top: 0;
 }
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1320px;
     height: 70px;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    background-color: #fff;
+    background-color: inherit;
 }
+
+/* .header-wrap{
+    margin: 0 20px;
+} */
+
 ul{
     display: flex;
     align-items: center;
 }
-
+.logo-pages{
+    height: 55px;
+    margin-left: -10px;
+}
 .item-page{
-    padding: 10px;
+    padding:10px;
     margin: 0 10px;
     position: relative;
+}
+
+.item-page a{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .item-page:after{
@@ -37,23 +51,21 @@ ul{
     width: 100%;
 }
 
-@keyframes lineOfItem{
-    from {
-        width: 0%;
-    }
-    to{
-        width: 100%;
-    }
-}
-
 .item-page__action{
-    padding: 5px;
+    padding: 8px 5px;
     margin: 0 5px;
 }
 
 .btn__signUp{
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 4px;
+}
+.item-label{
+    padding: 5px;
+}
+
+.btn__signUp:hover{
+
 }
 
 .btn__signUp:active{

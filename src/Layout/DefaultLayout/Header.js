@@ -4,8 +4,8 @@ function Header (){
     const html = `
     <div class="container">
             <div class="header">
-                <a href="../../../index.html" class="logo-link">
-                    <img src="../../assets/images/HomeIMG/logo.png" alt="" class="logo-pages">
+                <a href="/" class="logo-link">
+                    <img src="../../assets/images/HomeIMG/logo.svg"/ alt="" class="logo-pages">
                 </a>
                 <ul class="list-pages">
                     <li class="item-page">
