@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/assets/GlobalStyles/GlobalStyles.css">
+    <link rel="stylesheet" href="./src/Layout/DefaultLayout/HeaderStyles.css">
+    <link rel="stylesheet" href="./src/Layout/DefaultLayout/FooterStyles.css">
+    <link rel="stylesheet" href="./src/Layout/DefaultLayout/Footer.js">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header">
+                <a href="./index.html" class="logo-home">
+                    <img src="./src/assets/images/HomeIMG/logo.svg" alt="" class="logo-pages">
+                </a>
+                <ul class="list-pages">
+                    <li class="item-page">
+                        <a href="./src/pages/Intro/index.html" class="item-label">About Us</a>
+                    </li>
+                    <li class="item-page">
+                        <a href="./src/pages/Product/index.html" class="item-label">Product</a>
+                    </li>
+                    <li class="item-page">
+                        <a href="./src/pages/Blogs/index.html" class="item-label">Blogs</a>
+                    </li>
+                    <li class="item-page">
+                        <a href="./src/pages/Contact/index.html" class="item-label">Contact</a>
+                    </li>
+                </ul>
+                <ul class="list-actions">
+                    <li class="item-page__action">
+                        <a href="./src/pages/Cart/index.html" class="item-label icon-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                    <li class="item-page__action">
+                        <a href="./src/pages/SignIn/dangnhap.html" target="_parent" class="item-label">Sign In</a>
+                    </li>
+                    <li class="item-page__action btn__signUp">
+                        <a href="./src/pages/SignUp/index.html" class="item-label">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        
+        <h1>Đăng Nhập</h1>
+        
+        <form id="myForm" align="center">
+            <table >
+                
+                <tr>
+                    <td><label for="email"><b>Email</b></label></td>
+                    <td><input type="text" id="email" name="email" placeholder="Nhập email"></td>
+                </tr>
+                <tr>
+                    <td><label for="mk"><b>Mật Khẩu</b></label> </td>
+                    <td><input type="password" id="mk" name="psw" placeholder="Nhập mật khẩu"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Đăng Nhập" method="post" enctype="application/x-www-form-urlencoded" >
+                        <input type="reset" value="Hủy">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Bạn quên <a href="trangchu.html" target="_blank">Mật Khẩu?</a> <input type="checkbox" value="Đã ghi nhớ"> Ghi nhớ cho lần đăng nhập sau</b></td>
+                </tr>
+
+            </table>
+          </form>
+          
+          <script>
+          document.getElementById("myForm").onsubmit = function(event) {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+          
+            // Kiểm tra email có chứa ký tự @ hay không
+            if (!email.includes("@")) {
+              alert("Vui lòng nhập địa chỉ email hợp lệ.");
+              event.preventDefault(); // Ngăn không cho form gửi đi
+            }
+          
+            // Kiểm tra mật khẩu có đủ 8 ký tự không
+            if (password.length < 8) {
+              alert("Mật khẩu phải có ít nhất 8 ký tự.");
+              event.preventDefault();
+            }
+          }
+          </script>
+        
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer">
+                <ul class="list-footer">
+                    <li class="item-footer item-footer__left">
+                        <span>
+                            Hotline:<br/>
+                            9:00-18:00, Thứ Hai đến Thứ Sáu<br/>
+                            Email@
+                        </span>
+                        <span>
+                            <a href="#!">
+                                <i class="icon-footer fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#!">
+                                <i class="icon-footer fa-brands fa-square-facebook"></i>
+                            </a>
+                        </span>
+                    </li>
+                    <li class="item-footer item-footer__center">
+                        <div class="item-footer__center-content">
+                            <ul>
+                                <a href="#!" class="">Đặt hàng số lượng lớn</a>
+                                <a href="#!" class="">Khách hàng doanh nghiệp</a>
+                            </ul>
+                        </div>
+                        <div class="item-footer__center-content">
+                            <ul>
+                                <a href="#!" class="">Hợp tác phối hợp</a>
+                                <a href="#!" class="">Hợp tác doanh nghiệp</a>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item-footer">
+                        <p class="item-footer__desc">
+                            Hợp tác doanh nghiệp<br/>
+                            CÔNG TY TNHH Tarmor<br/>
+                            Khu II, Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều,<br/>
+                            Thành phố  Cần Thơ, Việt Nam<br/>
+                            MST: 0317645769<br/>
+                            Giấy phép ĐKKD số 0317645769<br/>
+                            cấp ngày 12 tháng 01 năm 2023<br/>
+                        </p>
+                        <img src="./src/assets/images/HomeIMG/logo_bct_hihi.webp" alt="" class="logo-footer">
+                    </li>
+                </ul>
+                <div class="list-footer__bottom">
+                    <div class="item-footer__bottom">
+                        <p class="item-footer__bottom-desc">
+                            copyright © 2024 • All Rights Reserved
+                        </p>
+                    </div>
+                    <div class="item-footer__bottom-center">
+                        <ul class="item-footer__bottom-list">
+                            <li>
+                                <a href="#!" class="item-footer__bottom-desc">
+                                    Đổi trả
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="item-footer__bottom-desc">
+                                    chính sách thanh toán
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="item-footer__bottom-desc">
+                                    chính sách giao hàng
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="item-footer__bottom-desc">
+                                    hướng dẫn mua hàng
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-footer__bottom-right">
+                        <ul class="item-footer__bottom-list">
+                            <li>
+                                <a href="#!" class="item-footer__bottom-desc">
+                                    Điều Khoản Sử Dụng
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="item-footer__bottom-desc">
+                                    Chính Sách Bảo Mật
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
