@@ -1,11 +1,51 @@
 var shoesAPI = "http://localhost:3000/shoes";
-var list = document.querySelector('.list-item')
-fetch(shoesAPI)
-    .then((reponse) => reponse.json())
-    .then((shoes) => {
-        const html = shoes.map((item)=>{
+var cartUserAPI = "http://localhost:3000/cartUser"
+var list = document.querySelector(".list-item");
+
+
+function handleGetItem(data,callback){
+    var options = {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+          },
+    }
+    fetch(shoesAPI + '/' + data,options)
+        .then(function(response){
+            return response.json()
+        })
+        .then(callback)
+}
+
+function addOtherItem(data,callback){
+    var options = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }
+    fetch(cartUserAPI,options)
+        .then(function(response){
+            return response.json()
+        })
+        .then(callback)
+}
+
+function handleOther(data){
+    addOtherItem(data)
+}
+const app = {
+    getProductAPI: function (callback) {
+        fetch(shoesAPI)
+            .then((response) => response.json())
+            .then(callback);
+    },
+    renderProductAPI: function (ListOfAPI) {
+        const html = ListOfAPI.map((item) => {
             return `
-                <div class="item-product">
+                <div data-id="${item.id}" class="item-product">
                     <img src="${item.img}" alt="" class="item-product__img">
                     <h4 class="item-product__heading">
                         ${item.name}
@@ -19,13 +59,18 @@ fetch(shoesAPI)
                     <p class="item-product__price">
                         Price: ${item.price}
                     </p>
-                    <button class="item-product__other-btn">
+                    <button onclick ="handleGetItem(${item.id},handleOther)" class="item-product__other-btn">
                         Other
                     </button>
                 </div>
-            `
-        })
-        list.innerHTML = html.join('')
-        console.log(list)
-    })
-    .catch(console.log("invalid API"));
+                `;
+        });
+        list.innerHTML = html.join("");
+    },
+    
+    start: function () {
+        this.getProductAPI(this.renderProductAPI);
+    },
+};
+
+app.start();
