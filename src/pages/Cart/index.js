@@ -41,6 +41,10 @@ function renderCart(data){
             `
         })
         listCart.innerHTML = htmls.join('');
+    }else{
+        listCart.innerHTML = `
+            <div class="textTemp-cart">Chưa có sản phẩm trong giỏ hàng</div>
+        `
     }
 }
 
