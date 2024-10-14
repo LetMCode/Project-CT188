@@ -46,6 +46,7 @@ function renderCart(data){
             <div class="textTemp-cart">Chưa có sản phẩm trong giỏ hàng</div>
         `
     }
+    getCartAPI(renderTotalPrice)
 }
 
 function calPrice(data){
@@ -93,7 +94,7 @@ function renderTotalPrice(data){
 
 function start(){
     getCartAPI(renderCart)
-    getCartAPI(renderTotalPrice)
+
 }
 
 start()
