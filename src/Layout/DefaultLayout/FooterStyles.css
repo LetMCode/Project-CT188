@@ -37,9 +37,14 @@ footer * {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 20px;
+    margin-top: 10px;
+    gap: 15px;
 }
 
+.item-footer__center-label{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
 .item-footer__left{
     display: flex;
     flex-direction: column;
