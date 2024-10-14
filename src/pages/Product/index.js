@@ -2,7 +2,6 @@ var shoesAPI = "http://localhost:3000/shoes";
 var cartUserAPI = "http://localhost:3000/cartUser"
 var list = document.querySelector(".list-item");
 
-
 function handleGetItem(data,callback){
     var options = {
         method: 'GET',

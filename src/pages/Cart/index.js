@@ -19,6 +19,9 @@ function handleDeleteCart(data){
         .then(function(response){
             return response.json()
         })
+        .then((product) =>
+            renderCart(product)
+        )
         .then(callback)
 }
 
