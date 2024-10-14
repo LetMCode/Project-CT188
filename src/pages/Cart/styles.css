@@ -3,26 +3,25 @@
     padding: 0;
 }
 
+body{
+    /* overflow-x: hidden; */
+}
+
 .container-cart{
     flex-wrap: nowrap;
 }
 
 .list-item__cart{
     display: grid;
-    margin-right: 30px;
     background-color: #fafafa;
-    
-
 }
 .item-cart{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    margin-bottom: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding: 10px;
+    margin: 15px;
+    padding: 15px 30px;
 }
 .item-cart:first-child{
     margin-top: 30px;
@@ -54,6 +53,7 @@
     padding: 30px 15px;
     position: fixed;
     top: 100px;
+    margin-left: 18px;
 }
 
 .payment-heading{
