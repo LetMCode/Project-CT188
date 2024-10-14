@@ -73,5 +73,14 @@
       "author": "Tokyo Life"
     }
   ],
-  "cartUser": []
+  "cartUser": [
+    {
+      "id": "8",
+      "name": "Giày thể thao êm chân siêu nhẹ",
+      "code": "SKU2470148",
+      "img": "../../assets/images/ProductIMG/img-product_8.jpg",
+      "price": "799.000VND",
+      "author": "Tokyo Life"
+    }
+  ]
 }

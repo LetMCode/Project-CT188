@@ -6,7 +6,7 @@ function getCartAPI(callback){
         .then(callback)
 }
 
-function handleDeleteCart(data){
+function DeleteCart(data,callback){
     var options = {
         method: 'DELETE',
         body: JSON.stringify(data),
@@ -19,10 +19,12 @@ function handleDeleteCart(data){
         .then(function(response){
             return response.json()
         })
-        .then((product) =>
-            renderCart(product)
-        )
         .then(callback)
+}
+
+function handleDeleteCart(data){
+    DeleteCart(data)
+    getCartAPI(renderCart)
 }
 
 function renderCart(data){
