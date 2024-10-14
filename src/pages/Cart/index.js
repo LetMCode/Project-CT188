@@ -24,7 +24,8 @@ function DeleteCart(data,callback){
 
 function handleDeleteCart(data){
     DeleteCart(data)
-    getCartAPI(renderCart)
+    // getCartAPI(renderCart)
+    location.reload()
 }
 
 function renderCart(data){
