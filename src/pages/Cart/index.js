@@ -28,6 +28,7 @@ function handleDeleteCart(data){
 
 function renderCart(data){
     var listCart = document.querySelector('.list-item__cart')
+    renderTotalPrice(data)
     if (data.length !== 0){
         const htmls = data.map((item)=>{
             return `
@@ -46,7 +47,6 @@ function renderCart(data){
             <div class="textTemp-cart">Chưa có sản phẩm trong giỏ hàng</div>
         `
     }
-    getCartAPI(renderTotalPrice)
 }
 
 function calPrice(data){
