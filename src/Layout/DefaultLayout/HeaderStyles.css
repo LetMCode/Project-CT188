@@ -67,8 +67,23 @@ ul{
     padding: 5px;
 }
 
+.item-page__action-icon{
+    position: relative;
+}
 
 
 .btn__signUp:active{
     background-color: #ccc;
+}
+
+.quantityIcon-header{
+    background-color: red;
+    padding: 3px 5px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    right: 2px;
+    z-index: -1;
 }

@@ -1,4 +1,6 @@
 var cartUserAPI = "http://localhost:3000/cartUser"
+var IconCart = document.querySelector('.icon-cart')
+var posIconCart = document.createElement('span')
 
 function getCartAPI(callback){
     fetch(cartUserAPI)
@@ -24,6 +26,16 @@ function DeleteCart(data,callback){
 
 function handleDeleteCart(data){
     DeleteCart(data,getCartAPI(renderCart))
+    getCartAPI(renderIconQuantityCart)
+}
+
+function renderIconQuantityCart (data){
+    posIconCart.setAttribute('class','.item-page__action-icon')
+    const htmls = `
+        <span class="quantityIcon-header">${data.length}</span>
+    `
+    posIconCart.innerHTML = htmls
+    IconCart.appendChild(posIconCart)
 }
 
 function renderCart(data){
@@ -94,7 +106,7 @@ function renderTotalPrice(data){
 
 function start(){
     getCartAPI(renderCart)
-
+    getCartAPI(renderIconQuantityCart)
 }
 
 start()

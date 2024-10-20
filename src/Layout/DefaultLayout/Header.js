@@ -1,5 +1,6 @@
 const body = document.querySelector('body')
 const header = document.createElement('header')
+
 function Header (){
     const html = `
     <div class="container">
@@ -22,10 +23,10 @@ function Header (){
                     </li>
                 </ul>
                 <ul class="list-actions">
-                    <li class="item-page__action">
-                        <a href="../Cart/index.html" class="item-label icon-cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </a>
+                    <li class="item-page__action item-page__action-icon">
+                    <a href="../Cart/index.html" class="item-label icon-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
                     </li>
                     <li class="item-page__action">
                         <a href="../SignUp/index.html" class="item-label">Sign In</a>
@@ -40,5 +41,6 @@ function Header (){
     header.innerHTML = html
     return body.appendChild(header) 
 }  
+
 
 Header()

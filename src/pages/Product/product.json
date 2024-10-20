@@ -73,30 +73,5 @@
       "author": "Tokyo Life"
     }
   ],
-  "cartUser": [
-    {
-      "id": "3",
-      "name": "Giày thể thao êm chân siêu nhẹ",
-      "code": "SKU2950077",
-      "img": "../../assets/images/ProductIMG/img-product_3.jpg",
-      "price": "799.000VND",
-      "author": "Tokyo Life"
-    },
-    {
-      "id": "6",
-      "name": "Giày thể thao êm chân siêu nhẹ",
-      "code": "SKU2120013",
-      "img": "../../assets/images/ProductIMG/img-product_6.jpg",
-      "price": "899.000VND",
-      "author": "Tokyo Life"
-    },
-    {
-      "id": "6",
-      "name": "Giày thể thao êm chân siêu nhẹ",
-      "code": "SKU2120013",
-      "img": "../../assets/images/ProductIMG/img-product_6.jpg",
-      "price": "899.000VND",
-      "author": "Tokyo Life"
-    }
-  ]
+  "cartUser": []
 }
