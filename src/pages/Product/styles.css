@@ -3,7 +3,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 50px;
     column-gap: 20px;
-    
 }
 .item-product{
     border: 1px solid #ccc;
@@ -38,6 +37,36 @@
 .item-product__author{
     margin-top: 5px;
     margin-left: 5px;
+}
+
+.item-product__size-box{
+    display: flex;
+    margin: 10px 5px 10px;
+}
+.item-product__size-options{
+    margin: auto;
+}
+
+.item-product__size-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.size__input{
+    display: none;
+}
+
+
+.item-product__size-options label{
+    padding: 10px 23px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+.active-size{
+    background-color: #000;
+    color: #fff;
 }
 
 .item-product__other-btn{

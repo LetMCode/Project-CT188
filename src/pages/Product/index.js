@@ -3,7 +3,6 @@ var cartUserAPI = "http://localhost:3000/cartUser"
 var list = document.querySelector(".list-item");
 var IconCart = document.querySelector('.icon-cart')
 var posIconCart = document.createElement('span')
-
 function getItem(data,callback){
     var options = {
         method: 'GET',
@@ -38,7 +37,13 @@ function handleOther (data){
     addItem(data)
     app.getCartAPI(app.renderIconQuantityCart)
 }
+function handleChooseSize(posParent,size){
+    constgetItem(posParent,test)
+}
 
+function test(data){
+    console.log(data)
+}
 
 const app = {
     getProductAPI: function (callback) {
@@ -68,6 +73,24 @@ const app = {
                     <p onclick="click(e)" class="item-product__price">
                         Price: ${item.price}
                     </p>
+                    <div class="item-product__size-box">
+                        <label class="item-product__size-label">Chọn size:</label>
+                        <div class="item-product__size-wrap">
+                            ${item.listSize.map((size)=>{
+                                return `
+                                <div data-id=${size.id} class="item-product__size-options">
+                                    ${size.list.map((sizeChild)=>{
+                                            return `
+                                                <input " class="size__input" id="size${sizeChild}" type="radio" name="size" value="${sizeChild}" >
+                                                <label onclick=getItem(${size.id}," class="item-product__size-label"for="size${sizeChild}" >${sizeChild}</label>
+                                            `
+                                        }).join("")}
+                                </div>
+                                    `
+                            } 
+                            ).join('')}
+                        </div>
+                    </div>
                     <button onclick ="getItem(${item.id},handleOther)" class="item-product__other-btn">
                         Other
                     </button>
@@ -85,9 +108,11 @@ const app = {
         IconCart.appendChild(posIconCart)
     },
     
+    
     start: function () {
         this.getCartAPI(this.renderIconQuantityCart)
         this.getProductAPI(this.renderProductAPI);
+        
     },
 };
 

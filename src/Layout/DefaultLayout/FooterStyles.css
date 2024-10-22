@@ -2,7 +2,7 @@ footer{
     background-color: var(--primary-color__background__footer);
     width: 100%;
     position: absolute;
-    bottom: -390px;
+    bottom: -320px;
 }
 footer * {
     color: #fff;

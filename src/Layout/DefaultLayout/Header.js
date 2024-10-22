@@ -6,7 +6,7 @@ function Header (){
     <div class="container">
             <div class="header">
                 <a href="../../../index.html" class="logo-link">
-                    <img src="../../assets/images/HomeIMG/logo.svg"/ alt="" class="logo-pages">
+                    <img src="../../assets/images/HomeIMG/logo1.png"/ alt="" class="logo-pages">
                 </a>
                 <ul class="list-pages">
                     <li class="item-page">

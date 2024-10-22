@@ -48,6 +48,7 @@ function renderCart(data){
             <img src="${item.img}" alt="" class="item-cart__img">
             <h4 class="item-cart__heading">${item.name}</h4>
             <h5 class="item-cart__code">${item.code}</h5>
+            <p class="item-cart__size">Size: ${item.size}</p>
             <p class="item-cart__price">${item.price}</p>
             <button onclick="handleDeleteCart(${item.id})" class="btn-delete__cart" >&times Delete</button>
             </div>

@@ -14,17 +14,14 @@ header{
     background-color: inherit;
 }
 
-/* .header-wrap{
-    margin: 0 20px;
-} */
-
 ul{
     display: flex;
     align-items: center;
 }
 .logo-pages{
-    height: 55px;
-    margin-left: -10px;
+    height: 155px;
+    position: relative;
+    transform: translateY(25%);
 }
 .item-page{
     padding:10px;
