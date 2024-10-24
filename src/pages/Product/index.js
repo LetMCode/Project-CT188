@@ -3,6 +3,7 @@ var cartUserAPI = "http://localhost:3000/cartUser"
 var list = document.querySelector(".list-item");
 var IconCart = document.querySelector('.icon-cart')
 var posIconCart = document.createElement('span')
+var toastMsg = document.querySelector('.toastMsg-wrap')
 function getItem(data,callback){
     var options = {
         method: 'GET',
@@ -36,14 +37,34 @@ function addItem(data,callback){
 function handleOther (data){
     addItem(data)
     app.getCartAPI(app.renderIconQuantityCart)
-}
-function handleChooseSize(posParent,size){
-    constgetItem(posParent,test)
+    setTimeout(()=>toastMessage(),2000)
+    
 }
 
-function test(data){
-    console.log(data)
+function toastMessage(){
+    const htmls = `
+        <span class="toastMsg__icon-wrap"> <i class="fa-solid fa-circle-check toastMsg__icon"></i></span>
+        <h4 class="toastMsg__heading">
+            Đã thêm sản phẩm vào giỏ hàng
+        </h4>
+    `
+    contentToastMsg = document.createElement("div")
+    contentToastMsg.setAttribute('class','toastMsg')
+    contentToastMsg.innerHTML = htmls
+    var btnOther = document.querySelectorAll('.item-product__other-btn')
+    for (let btn of btnOther) {
+    btn.onclick =  (e)=> {
+        toastMsg.appendChild(contentToastMsg)
+        contentToastMsg.style.animation = `slideInLeft ease .3s, fadeOut linear 1s 2s forwards`
+        setTimeout(function () {
+            toastMsg.removeChild(contentToastMsg);
+        }, 3000)
+    }
+    }
+
+   
 }
+
 
 const app = {
     getProductAPI: function (callback) {
@@ -73,24 +94,6 @@ const app = {
                     <p onclick="click(e)" class="item-product__price">
                         Price: ${item.price}
                     </p>
-                    <div class="item-product__size-box">
-                        <label class="item-product__size-label">Chọn size:</label>
-                        <div class="item-product__size-wrap">
-                            ${item.listSize.map((size)=>{
-                                return `
-                                <div data-id=${size.id} class="item-product__size-options">
-                                    ${size.list.map((sizeChild)=>{
-                                            return `
-                                                <input " class="size__input" id="size${sizeChild}" type="radio" name="size" value="${sizeChild}" >
-                                                <label onclick=getItem(${size.id}," class="item-product__size-label"for="size${sizeChild}" >${sizeChild}</label>
-                                            `
-                                        }).join("")}
-                                </div>
-                                    `
-                            } 
-                            ).join('')}
-                        </div>
-                    </div>
                     <button onclick ="getItem(${item.id},handleOther)" class="item-product__other-btn">
                         Other
                     </button>
@@ -108,11 +111,9 @@ const app = {
         IconCart.appendChild(posIconCart)
     },
     
-    
     start: function () {
         this.getCartAPI(this.renderIconQuantityCart)
         this.getProductAPI(this.renderProductAPI);
-        
     },
 };
 

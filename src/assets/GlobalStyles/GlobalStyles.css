@@ -4,6 +4,7 @@
 :root {
     --primary-color__background: #fff;
     --primary-color__text: #111821;
+    --primary-color__text-while:#fff;
     --primary-color__navbar: #fff;
     --primary-color__text__footer: #aba8ac;
     --primary-color__background__footer: #12181f;
