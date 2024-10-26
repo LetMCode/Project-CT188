@@ -27,6 +27,7 @@ function addItem(data,callback){
             'Accept': 'application/json'
         }
     }
+    
     fetch(cartUserAPI,options)
         .then(function(response){
             return response.json()
@@ -37,7 +38,7 @@ function addItem(data,callback){
 function handleOther (data){
     addItem(data)
     app.getCartAPI(app.renderIconQuantityCart)
-    setTimeout(()=>toastMessage(),2000)
+    
     
 }
 
@@ -109,6 +110,7 @@ const app = {
         `
         posIconCart.innerHTML = htmls
         IconCart.appendChild(posIconCart)
+        toastMessage()
     },
     
     start: function () {
