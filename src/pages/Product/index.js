@@ -1,71 +1,68 @@
 var shoesAPI = "http://localhost:3000/shoes";
-var cartUserAPI = "http://localhost:3000/cartUser"
+var cartUserAPI = "http://localhost:3000/cartUser";
 var list = document.querySelector(".list-item");
-var IconCart = document.querySelector('.icon-cart')
-var posIconCart = document.createElement('span')
-var toastMsg = document.querySelector('.toastMsg-wrap')
-function getItem(data,callback){
+var IconCart = document.querySelector(".icon-cart");
+var posIconCart = document.createElement("span");
+var toastMsg = document.querySelector(".toastMsg-wrap");
+function getItem(data, callback) {
     var options = {
-        method: 'GET',
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
-          },
-    }
-    fetch(shoesAPI + '/' + data,options)
-        .then(function(response){
-            return response.json()
+        },
+    };
+    fetch(shoesAPI + "/" + data, options)
+        .then(function (response) {
+           
+            return response.json();
         })
-        .then(callback)
+        
+        .then(callback);
 }
 
-function addItem(data,callback){
+function addItem(data, callback) {
     var options = {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify(data),
-        headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    }
-    
-    fetch(cartUserAPI,options)
-        .then(function(response){
-            return response.json()
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+    };
+
+    fetch(cartUserAPI, options)
+        .then(function (response) {
+            return response.json();
         })
-        .then(callback)
+        .then(callback);
 }
 
-function handleOther (data){
-    addItem(data)
-    app.getCartAPI(app.renderIconQuantityCart)
-    
-    
+function handleOther(data) {
+    toastMessage()
+    addItem(data);
+    app.getCartAPI(app.renderIconQuantityCart);
 }
 
-function toastMessage(){
+function toastMessage() {
+    var contentToastMsg = document.querySelector('.toastMsg')
+    const duration = 3000;
+    const delay = (duration / 1000).toFixed(2);
     const htmls = `
         <span class="toastMsg__icon-wrap"> <i class="fa-solid fa-circle-check toastMsg__icon"></i></span>
         <h4 class="toastMsg__heading">
             Đã thêm sản phẩm vào giỏ hàng
         </h4>
-    `
-    contentToastMsg = document.createElement("div")
-    contentToastMsg.setAttribute('class','toastMsg')
-    contentToastMsg.innerHTML = htmls
-    var btnOther = document.querySelectorAll('.item-product__other-btn')
-    for (let btn of btnOther) {
-    btn.onclick =  (e)=> {
-        toastMsg.appendChild(contentToastMsg)
-        contentToastMsg.style.animation = `slideInLeft ease .3s, fadeOut linear 1s 2s forwards`
-        setTimeout(function () {
-            toastMsg.removeChild(contentToastMsg);
-        }, 3000)
-    }
-    }
-
-   
+    `;
+    contentToastMsg.innerHTML = htmls;
+    const autoRemoveId = setTimeout(function () {
+        toastMsg.removeChild(contentToastMsg);
+    }, duration + 1000);
+    toastMsg.appendChild(contentToastMsg);
+    toastMsg.classList.add('active')
+    contentToastMsg.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+    clearTimeout(autoRemoveId)
+    
 }
-
 
 const app = {
     getProductAPI: function (callback) {
@@ -103,18 +100,17 @@ const app = {
         });
         list.innerHTML = html.join("");
     },
-    renderIconQuantityCart: function(data){
-        posIconCart.setAttribute('class','.item-page__action-icon')
+    renderIconQuantityCart: function (data) {
+        posIconCart.setAttribute("class", ".item-page__action-icon");
         const htmls = `
             <span class="quantityIcon-header">${data.length}</span>
-        `
-        posIconCart.innerHTML = htmls
-        IconCart.appendChild(posIconCart)
-        toastMessage()
+        `;
+        posIconCart.innerHTML = htmls;
+        IconCart.appendChild(posIconCart);
     },
-    
+
     start: function () {
-        this.getCartAPI(this.renderIconQuantityCart)
+        this.getCartAPI(this.renderIconQuantityCart);
         this.getProductAPI(this.renderProductAPI);
     },
 };

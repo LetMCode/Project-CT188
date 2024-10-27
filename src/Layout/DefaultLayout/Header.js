@@ -29,10 +29,10 @@ function Header (){
                     </a>
                     </li>
                     <li class="item-page__action">
-                        <a href="../SignUp/index.html" class="item-label">Sign In</a>
+                        <a href="../SignUp/index.html" class="item-label">Sign Up</a>
                     </li>
                     <li class="item-page__action btn__signUp">
-                        <a href="../SignIn/index.html" class="item-label">Sign Up</a>
+                        <a href="../SignIn/index.html" class="item-label">Sign In</a>
                     </li>
                 </ul>
             </div>
