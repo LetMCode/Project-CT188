@@ -89,6 +89,9 @@ const app = {
                     <p class="item-product__author">
                         Hãng: ${item.author}
                     </p>
+                    <p class="item-product__size">
+                        Size: ${item.size}
+                    </p>
                     <p onclick="click(e)" class="item-product__price">
                         Price: ${item.price}
                     </p>

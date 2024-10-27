@@ -6,6 +6,7 @@
       "code": "SKU2440457",
       "img": "../../assets/images/ProductIMG/img-product_1.jpg",
       "price": "899.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     },
     {
@@ -14,6 +15,7 @@
       "code": "SKU2400020",
       "img": "../../assets/images/ProductIMG/img-product_2.jpg",
       "price": "999.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     },
     {
@@ -22,6 +24,7 @@
       "code": "SKU2950077",
       "img": "../../assets/images/ProductIMG/img-product_3.jpg",
       "price": "799.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     },
     {
@@ -30,6 +33,7 @@
       "code": "SKU2090064",
       "img": "../../assets/images/ProductIMG/img-product_4.jpg",
       "price": "599.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     },
     {
@@ -38,6 +42,7 @@
       "code": "SKU2110014",
       "img": "../../assets/images/ProductIMG/img-product_5.jpg",
       "price": "699.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     },
     {
@@ -46,6 +51,7 @@
       "code": "SKU2120013",
       "img": "../../assets/images/ProductIMG/img-product_6.jpg",
       "price": "899.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     },
     {
@@ -54,6 +60,7 @@
       "code": "SKU2080027",
       "img": "../../assets/images/ProductIMG/img-product_7.jpg",
       "price": "899.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     },
     {
@@ -62,6 +69,7 @@
       "code": "SKU2470148",
       "img": "../../assets/images/ProductIMG/img-product_8.jpg",
       "price": "799.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     },
     {
@@ -70,25 +78,9 @@
       "code": "SKU2540018",
       "img": "../../assets/images/ProductIMG/img-product_9.jpg",
       "price": "899.000VND",
+      "size": "38",
       "author": "Tokyo Life"
     }
   ],
-  "cartUser": [
-    {
-      "id": "2",
-      "name": "Giày thể thao êm chân kháng thuẩn ",
-      "code": "SKU2400020",
-      "img": "../../assets/images/ProductIMG/img-product_2.jpg",
-      "price": "999.000VND",
-      "author": "Tokyo Life"
-    },
-    {
-      "id": "2",
-      "name": "Giày thể thao êm chân kháng thuẩn ",
-      "code": "SKU2400020",
-      "img": "../../assets/images/ProductIMG/img-product_2.jpg",
-      "price": "999.000VND",
-      "author": "Tokyo Life"
-    }
-  ]
+  "cartUser": []
 }
