@@ -3,17 +3,28 @@
 
 :root {
     --primary-color__background: #fff;
+    --primary-color__background__list: #fafafa;
+    --primary-color__background__item: #fff;
     --primary-color__text: #111821;
     --primary-color__text-while:#fff;
     --primary-color__navbar: #fff;
     --primary-color__text__footer: #aba8ac;
     --primary-color__background__footer: #12181f;
-    --primary-color__btn: orange;
+    --primary-color__btn: #000;
     --primary-color__text__price:#c92027;
-    --primary-boxShadow: rgba(237, 237, 246, 0.2);
-    --primary-boxShadow__product: rgba(0, 0, 0, 0.2);
-
-}
+    --primary-boxShadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+    --primary-boxShadow__item: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    --primary-fontsize-desc: 1.3rem;
+    --primary-fontsize-body: 1.6rem;
+    --primary-fontsize-btn__large: 2rem;
+    --primary-fontsize-heading: 2.3rem;
+    --primary-opacity-btn__active: 0.8;
+    --primary-opacity__desc: 0.6;
+    --primary-font-weight__bold:700;
+    --primary-border-radius__btn: 15px;
+    --primary-border-radius__item: 10px;
+    --primary-border: 1px solid #ccc
+}   
 
 html{
     font-size: 62.5%;
@@ -25,6 +36,7 @@ html{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: none;
 }
 body{
     font-family: 'Roboto',sans-serif;

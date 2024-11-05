@@ -82,5 +82,15 @@
       "author": "Tokyo Life"
     }
   ],
-  "cartUser": []
+  "cartUser": [
+    {
+      "id": "4",
+      "name": "Giày thể thao êm chân siêu nhẹ",
+      "code": "SKU2090064",
+      "img": "../../assets/images/ProductIMG/img-product_4.jpg",
+      "price": "599.000VND",
+      "size": "38",
+      "author": "Tokyo Life"
+    }
+  ]
 }

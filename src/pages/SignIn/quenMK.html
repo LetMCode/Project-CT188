@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Balance & Gara</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="../../assets/images/Favicon/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/Favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../../assets/images/Favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/Favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../../assets/images/Favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+        <link rel="stylesheet" href="../../assets/GlobalStyles/GlobalStyles.css">
+    <link rel="stylesheet" href="../../Layout/DefaultLayout/HeaderStyles.css">
+    <link rel="stylesheet" href="../../Layout/DefaultLayout/FooterStyles.css">
+    <link rel="stylesheet" href="../SignUp/styles.css">
+</head>
+<body>
+    <h1 class="heading">Chào mừng bạn đến với Balance & gara</h5>
+    <main>
+        <div class="cot-form">       
+            <form action="" method="POST" class="form" id="form-3">
+                <h1 class="Sign">QUÊN MẬT KHẨU</h1>
+                <h3>Nhập Email hoặc số điện thoại của bạn <br>để lấy lại mật khẩu</h3>
+                                <!--Email or sdt-->
+                <div class="form-group">
+                    <input id="email" name="email" class="form-control" type="text" placeholder="Email hoặc số điện thoại" >
+                    <span class="form-message"></span>
+                </div>
+                                <!--mật khẩu-->
+                <!-- <div class="form-group">
+                    <input id="password" name="password" class="form-control" type="password" placeholder="Nhập mật khẩu" >
+                    <span class="form-message"></span>
+                </div> -->
+                <button type="submit" class="btn" id="submit-btn" >Xác nhận</button>
+                <!-- <div class="quenmk">
+                    <a href="quenmk.html" target="_blank">Quên mật khẩu ?</a>
+                </div>                                 -->
+                <div class="or">hoặc sử dụng tài khoản</div>
+                <div class="icon">
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook" ></i></a>
+                    <a href="https://www.google.com/"><i class="fa-brands fa-google" ></i></a>
+                    <a href="https://x.com/__x"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </form>
+        </div>
+
+
+    </main>
+    <script src="../SignUp/SignUpStyles.js"></script>
+    <script>
+
+        Validator({
+            form:'#form-3',
+            errorSelector:'.form-message',
+            formGroupSelector:'.form-group',
+            rules: [
+                Validator.isRequired('#email','Vui lòng nhập Email hoặc SDT'),
+                Validator.isEmail('#email','Email hoặc SDT chưa chính xác'),
+                // Validator.isRequired('#password','Vui lòng nhập mật khẩu'),
+
+                //Validator.isRequired('#day','chon ngay'),
+                // Validator.minLength('#password',6),
+                //Validator.isRequired('input[name="gender"]'),
+                
+            ],
+            onSubmit: function (data) {
+                console.log(data);
+            } 
+        });
+    </script>
+    <script src="../../Layout/DefaultLayout/Header.js"></script>
+    <!-- <script src="../../Layout/DefaultLayout/Footer.js"></script> -->
+</html>

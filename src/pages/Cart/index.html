@@ -16,10 +16,8 @@
     <link rel="manifest" href="../../assets/images/Favicon/site.webmanifest" />
     <link rel="stylesheet" href="../../../node_modules/normalize.css/normalize.css">
         <link rel="stylesheet" href="../../assets/GlobalStyles/grid.css">
-    <link rel="stylesheet" href="../../assets/GlobalStyles/GlobalStyles.css">
-    <link rel="stylesheet" href="../../Layout/DefaultLayout/HeaderStyles.css">
-    <link rel="stylesheet" href="../../Layout/DefaultLayout/FooterStyles.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../../../styles.css">
+
 </head>
 
 <body>
@@ -32,9 +30,14 @@
             </div>
         </div>
     </main>
-    <script src="../../Layout/DefaultLayout/Header.js"></script>
-    <script src="../../Layout/DefaultLayout/Footer.js"></script>
-    <script src="./index.js"></script>
+
+    <script src="../../../index.js"></script>
+    <script>
+        Header()
+        Footer()
+        CartPageJS.start()
+    </script>
+
 </body>
 
 </html>

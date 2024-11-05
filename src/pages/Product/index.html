@@ -15,10 +15,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/Favicon/apple-touch-icon.png" />
     <link rel="manifest" href="../../assets/images/Favicon/site.webmanifest" />
     <link rel="stylesheet" href="../../../node_modules/normalize.css/normalize.css">
-    <link rel="stylesheet" href="../../assets/GlobalStyles/GlobalStyles.css">
-    <link rel="stylesheet" href="../../Layout/DefaultLayout/HeaderStyles.css">
-    <link rel="stylesheet" href="../../Layout/DefaultLayout/FooterStyles.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body>
@@ -43,7 +40,7 @@
             </div>
 
             <div class="list-item">
-
+                <h1> Chạy git bash:<br> npm run start-api để hiển thị sản phẩm</h1>
             </div>
         </div>
         <div class="toastMsg-wrap">
@@ -52,9 +49,13 @@
             </div>
         </div>
     </main>
-    <script src="../../Layout/DefaultLayout/Header.js"></script>
-    <script src="../../Layout/DefaultLayout/Footer.js"></script>
-    <script src="./index.js"></script>
+    <script src="../../../index.js"></script>
+    <script>
+        Header()
+        Footer()
+        ProductJS.start()
+    </script>
+    
 </body>
 
 </html>
