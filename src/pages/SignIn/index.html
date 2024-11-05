@@ -18,41 +18,49 @@
     <link rel="stylesheet" href="../../../styles.css">
     <link rel="stylesheet" href="../SignUp/styles.css">
 </head>
-<body>
+<body class="form-body">
     <h1 class="heading">Chào mừng bạn đến với <br>Balance & gara</h5>
-    <main class="m2">
-        <div class="cot-form">       
-            <form action="" method="POST" class="form" id="form-2">
-                <h1 class="Sign">ĐĂNG NHẬP</h1>
-                                <!--Email or sdt-->
-                <div class="form-group">
-                    <input id="email" name="email" class="form-control" type="text" placeholder="Email hoặc số điện thoại" >
-                    <span class="form-message"></span>
-                </div>
-                                <!--mật khẩu-->
-                <div class="form-group">
-                    <input id="password" name="password" class="form-control" type="password" placeholder="Nhập mật khẩu" >
-                    <span class="form-message"></span>
-                </div>
-                <button type="submit" class="btn" id="submit-btn" >Xác nhận</button>
-                <div class="quenmk">
-                    <a href="quenMK.html" target="_blank">Quên mật khẩu ?</a>
-                </div>                                
-                <div class="or">hoặc sử dụng tài khoản</div>
-                <div class="icon">
-                    <a id="ic" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" ></i></a>
-                    <a id="ic" href="https://www.google.com/" target="_blank"><i class="fa-brands fa-google" ></i></a>
-                    <a id="ic" href="https://x.com/__x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-            </form>
-        </div>
-        <div class="cot-nd"> 
-            <h1>Xin Chào</h1>
-            <h3>Nếu bạn đã có tài khoản <br>Hãy đăng nhập ở đây</h3>
-            <a href="../SignUp/index.html"> <button class="ca2">Đăng Ký</button></a>         
-        </div>
-
-    </main>
+        <main class="m1 form-wrap">
+            <div class="cot-nd">                    
+                <h1>Xin Chào</h1>
+                <h3>Nếu bạn đã có tài khoản <br>Hãy đăng nhập ở đây</h3>
+                <a href="../SignIn/index.html"><button class="ca2">Đăng Nhập</button></a>
+            </div>  
+            <div class="cot-form">
+                <form action="" method="POST" class="form" id="form-1">
+                    <h1 class="Sign">ĐĂNG KÝ</h1>
+                            <!--Họ và tên--required-->
+                    <div class="form-group">
+                        <input  id="fullname" name="fullname" class="form-control" type="text" placeholder="Tên tài khoản" >
+                        <br><span class="form-message"></span>
+                    </div>               
+                            <!--email-->
+                    <div class="form-group">
+                        <input id="email" name="email" class="form-control" type="text" placeholder="Email hoặc số điện thoại" >
+                        <br><span class="form-message"></span>
+                    </div>                        
+                            <!--mật khẩu-->
+                    <div class="form-group">
+                        <input id="password" name="password" class="form-control" type="password" placeholder="Mật khẩu" >
+                        <br><span class="form-message"></span>
+                    </div>
+    
+                            <!--nhập lại mật khẩu-->
+                    <div class="form-group">
+                        <input id="password_confirm" name="password_confirm" class="form-control" placeholder="Nhập lại mật khẩu" type="password" >
+                        <br><span class="form-message"></span>
+                    </div>
+                            <!-- Xác nhận -->
+                    <button type="submit" class="btn" id="submit-btn" >Xác nhận</button>
+                    <div class="or">hoặc sử dụng tài khoản</div>
+                    <div class="form-icon">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="form-icon ic-facebook fa-brands fa-facebook" ></i></a>
+                        <a href="https://www.google.com/" target="_blank"><i class="form-icon ic-google fa-brands fa-google" ></i></a>
+                        <a href="https://x.com/__x" target="_blank"><i class="form-icon ic-x-twitter fa-brands fa-x-twitter"></i></a>
+                    </div>                        
+                </form>
+            
+            </div>
     <script src="../../../index.js"></script>
     <script>
         Header()
