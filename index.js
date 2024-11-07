@@ -17,13 +17,13 @@ let currentIndex = 0;
 function Header() {
     const html = `
     <div class="container">
-            <div class="header">
+            <div class="header-wrap">
                 <a href="../../../index.html" class="logo-link">
                     <img src="../../assets/images/HomeIMG/logo1.png"/ alt="" class="logo-pages">
                 </a>
                 <ul class="list-pages">
                     <li class="item-page">
-                        <a href="../Intro/index.html" class="item-label">Về Chúng tôi</a>
+                        <a href="../Intro/index.html" class="item-label">Giới thiệu</a>
                     </li>
                     <li class="item-page">
                         <a href="../Product/index.html" class="item-label">Sản phẩm</a>
@@ -32,7 +32,7 @@ function Header() {
                         <a href="../Blogs/index.html" class="item-label">Blogs</a>
                     </li>
                     <li class="item-page">
-                        <a href="../Contact/index.html" class="item-label">Contact</a>
+                        <a href="../Contact/index.html" class="item-label">Liên hệ</a>
                     </li>
                 </ul>
                 <ul class="list-actions">
@@ -42,10 +42,10 @@ function Header() {
                     </a>
                     </li>
                     <li class="item-page__action">
-                        <a href="../SignUp/index.html" class="item-label">Sign Up</a>
+                        <a href="../SignUp/index.html" class="item-label">Đăng ký</a>
                     </li>
                     <li class="item-page__action btn__signUp">
-                        <a href="../SignIn/index.html" class="item-label">Sign In</a>
+                        <a href="../SignIn/index.html" class="item-label">Đăng nhập</a>
                     </li>
                 </ul>
             </div>
@@ -62,9 +62,9 @@ function Footer() {
                 <ul class="list-footer">
                     <li class="item-footer item-footer__left">
                         <span>
-                            Hotline:<br/>
+                            Hotline:0912528877<br/>
                             9:00-18:00, Thứ Hai đến Thứ Sáu<br/>
-                            Email@
+                            ballance&gara@gmail.com
                         </span>
                         <span>
                             <a href="#!">
@@ -99,7 +99,7 @@ function Footer() {
                     <li class="item-footer">
                         <p class="item-footer__desc">
                             Hợp tác doanh nghiệp<br/>
-                            CÔNG TY TNHH Tarmor<br/>
+                            CÔNG TY TNHH Ballance & Gara<br/>
                             Khu II, Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều,<br/>
                             Thành phố  Cần Thơ, Việt Nam<br/>
                             MST: 0317645769<br/>

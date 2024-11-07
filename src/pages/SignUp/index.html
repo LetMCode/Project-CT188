@@ -16,88 +16,88 @@
     <link rel="manifest" href="../../assets/images/Favicon/site.webmanifest" />
     <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="../../assets/GlobalStyles/GlobalStyles.css">
+    <link rel="stylesheet" href="../../assets/GlobalStyles/grid.css">
     <link rel="stylesheet" href="../../../styles.css">
-    <link rel="stylesheet" href="./styles.css">
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
 </head>
 
-<body>
-    <h1 class="heading">Chào mừng bạn đến với <br>Balance & gara</h5>
-        <main class="m1">
-            <div class="cot-nd">
-                <h1>Xin Chào</h1>
-                <h3>Nếu bạn đã có tài khoản <br>Hãy đăng nhập ở đây</h3>
-                <a href="../SignIn/index.html"><button class="ca2">Đăng Nhập</button></a>
-            </div>
-            <div class="cot-form">
-                <form action="" method="POST" class="form" id="form-1">
-                    <h1 class="Sign">ĐĂNG KÝ</h1>
-                    <!--Họ và tên--required-->
-                    <div class="form-group">
-                        <input id="fullname" name="fullname" class="form-control" type="text"
-                            placeholder="Tên tài khoản">
-                        <span class="form-message"></span>
-                    </div>
-                    <!--email-->
-                    <div class="form-group">
-                        <input id="email" name="email" class="form-control" type="text"
-                            placeholder="Email hoặc số điện thoại">
-                        <span class="form-message"></span>
-                    </div>
-                    <!--mật khẩu-->
-                    <div class="form-group">
-                        <input id="password" name="password" class="form-control" type="password"
-                            placeholder="Mật khẩu">
-                        <span class="form-message"></span>
-                    </div>
+<body class="form-body">
+    <div class="form-heading">Chào mừng bạn đến với <br>Balance & gara</div>
+    <main class="m1 form-wrap">
+        <div class="cot-nd">
+            <h2>Xin Chào</h2>
+            <h3>Nếu bạn đã có tài khoản <br>Hãy đăng nhập ở đây</h3>
+            <a href="../SignIn/index.html"><button class="form-btn ca2">Đăng Nhập</button></a>
+        </div>
+        <div class="cot-form">
+            <form action="" method="POST" class="form" id="form-1">
+                <h1 class="Sign">ĐĂNG KÝ</h1>
+                <!--Họ và tên--required-->
+                <div class="form-group">
+                    <input id="fullname" name="fullname" class="form-control" type="text" placeholder="Tên tài khoản">
+                    <br><span class="form-message"></span>
+                </div>
+                <!--email-->
+                <div class="form-group">
+                    <input id="email" name="email" class="form-control" type="text"
+                        placeholder="Email hoặc số điện thoại">
+                    <br><span class="form-message"></span>
+                </div>
+                <!--mật khẩu-->
+                <div class="form-group">
+                    <input id="password" name="password" class="form-control" type="password" placeholder="Mật khẩu">
+                    <br><span class="form-message"></span>
+                </div>
 
-                    <!--nhập lại mật khẩu-->
-                    <div class="form-group">
-                        <input id="password_confirm" name="password_confirm" class="form-control"
-                            placeholder="Nhập lại mật khẩu" type="password">
-                        <span class="form-message"></span>
-                    </div>
+                <!--nhập lại mật khẩu-->
+                <div class="form-group">
+                    <input id="password_confirm" name="password_confirm" class="form-control"
+                        placeholder="Nhập lại mật khẩu" type="password">
+                    <br><span class="form-message"></span>
+                </div>
+                <!-- Xác nhận -->
+                <button type="submit" class="form-btn btn-sign" id="submit-btn">Xác nhận</button>
+                <div class="or"><b>hoặc sử dụng tài khoản</b></div>
+                <div class="form-icon">
+                    <a href="#!" target="_blank"><i
+                            class="form-icon ic-facebook fa-brands fa-facebook"></i></a>
+                    <a href="#!" target="_blank"><i
+                            class="form-icon ic-google fa-brands fa-google"></i></a>
+                    <a href="#!" target="_blank"><i
+                            class="form-icon ic-x-twitter fa-brands fa-x-twitter"></i></a>
+                </div>
+            </form>
 
-                    <button type="submit" class="btn" id="submit-btn">Xác nhận</button>
-                    <div class="or">hoặc sử dụng tài khoản</div>
-                    <div class="icon">
-                        <a id="ic" href="https://www.facebook.com/" target="_blank"><i
-                                class="fa-brands fa-facebook"></i></a>
-                        <a id="ic" href="https://www.google.com/" target="_blank"><i
-                                class="fa-brands fa-google"></i></a>
-                        <a id="ic" href="https://x.com/__x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </form>
-
-            </div>
-        </main>
-        <script src="../../../index.js"></script>
-        <script>
-            Header()
-            Footer()
-            ProductJS.renderIconQuantityCartForPages()
-            Validator({
-                form: '#form-1',
-                errorSelector: '.form-message',
-                formGroupSelector: '.form-group',
-                rules: [
-                    Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ'), //#fullname=selector
-                    Validator.isRequired('#email', 'Vui lòng nhập Email hoặc SDT'),
-                    Validator.isEmail('#email', 'Email hoặc SDT chưa chính xác'),
-                    // Validator.isRequired('#phone','Vui lòng nhập SDT'),
-                    // Validator.isPhone('#phone','SDT chưa chính xác'),
-                    Validator.isRequired('#password', 'Vui lòng nhập mật khẩu'),
-                    Validator.minLength('#password', 6),
-                    Validator.isRequired('#password_confirm', 'Vui lòng nhập lại mật khẩu'),
-                    // Validator.isRequired('input[name="gender"]'),
-                    Validator.isConfirm('#password_confirm', function () {
-                        return document.querySelector('#form-1 #password').value;
-                    }, 'Mật khẩu nhập lại không chính xác')
-                ],
-                onSubmit: function (data) {
-                    console.log(data);
-                }
-            });
-        </script>
+        </div>
+    </main>
+    <script src="../../../index.js"></script>
+    <script>
+        Header()
+        Footer()
+        ProductJS.renderIconQuantityCartForPages()
+        Validator({
+            form: '#form-1',
+            errorSelector: '.form-message',
+            formGroupSelector: '.form-group',
+            rules: [
+                Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ'), //#fullname=selector
+                Validator.isRequired('#email', 'Vui lòng nhập Email hoặc SDT'),
+                Validator.isEmail('#email', 'Email hoặc SDT chưa chính xác'),
+                // Validator.isRequired('#phone','Vui lòng nhập SDT'),
+                // Validator.isPhone('#phone','SDT chưa chính xác'),
+                Validator.isRequired('#password', 'Vui lòng nhập mật khẩu'),
+                Validator.minLength('#password', 6),
+                Validator.isRequired('#password_confirm', 'Vui lòng nhập lại mật khẩu'),
+                // Validator.isRequired('input[name="gender"]'),
+                Validator.isConfirm('#password_confirm', function () {
+                    return document.querySelector('#form-1 #password').value;
+                }, 'Mật khẩu nhập lại không chính xác')
+            ],
+            onSubmit: function (data) {
+                console.log(data);
+            }
+        });
+    </script>
 
 </body>
 

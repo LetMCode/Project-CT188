@@ -14,46 +14,39 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/Favicon/apple-touch-icon.png" />
     <link rel="manifest" href="../../assets/images/Favicon/site.webmanifest" />
     <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
-        <link rel="stylesheet" href="../../assets/GlobalStyles/GlobalStyles.css">
-    <link rel="stylesheet" href="../../Layout/DefaultLayout/HeaderStyles.css">
-    <link rel="stylesheet" href="../../Layout/DefaultLayout/FooterStyles.css">
-    <link rel="stylesheet" href="../SignUp/styles.css">
+    <link rel="stylesheet" href="../../assets/GlobalStyles/grid.css">
+    <link rel="stylesheet" href="../../../styles.css">
 </head>
-<body>
-    <h1 class="heading">Chào mừng bạn đến với Balance & gara</h5>
-    <main>
+<body class="form-body">
+    <div class="form-heading">Chào mừng bạn đến với <br>Balance & gara</div>
+    <main class="m3 form-wrap">
         <div class="cot-form">       
             <form action="" method="POST" class="form" id="form-3">
-                <h1 class="Sign">QUÊN MẬT KHẨU</h1>
-                <h3>Nhập Email hoặc số điện thoại của bạn <br>để lấy lại mật khẩu</h3>
+                <div class="form-mk">
+                    <h1 class="Sign">QUÊN MẬT KHẨU</h1>
+                    <h3 class="nd-form-mk">Nhập Email hoặc số điện thoại của bạn <br>để lấy lại mật khẩu</h3>
                                 <!--Email or sdt-->
-                <div class="form-group">
-                    <input id="email" name="email" class="form-control" type="text" placeholder="Email hoặc số điện thoại" >
-                    <span class="form-message"></span>
-                </div>
-                                <!--mật khẩu-->
-                <!-- <div class="form-group">
-                    <input id="password" name="password" class="form-control" type="password" placeholder="Nhập mật khẩu" >
-                    <span class="form-message"></span>
-                </div> -->
-                <button type="submit" class="btn" id="submit-btn" >Xác nhận</button>
-                <!-- <div class="quenmk">
-                    <a href="quenmk.html" target="_blank">Quên mật khẩu ?</a>
-                </div>                                 -->
-                <div class="or">hoặc sử dụng tài khoản</div>
-                <div class="icon">
-                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook" ></i></a>
-                    <a href="https://www.google.com/"><i class="fa-brands fa-google" ></i></a>
-                    <a href="https://x.com/__x"><i class="fa-brands fa-x-twitter"></i></a>
+                    <div class="form-group">
+                        <input id="email" name="email" class="form-control" type="text" placeholder="Email hoặc số điện thoại" >
+                        <br><span class="form-message"></span>
+                    </div>
+                                <!-- Xác nhận -->
+                    <button type="submit" class="form-btn btn-sign" id="submit-btn" >Xác nhận</button>
+
+                    <div class="or"><b>hoặc sử dụng tài khoản</b></div>
+                    <div class="form-icon">
+                        <a href="#!" target="_blank"><i class="form-icon ic-facebook fa-brands fa-facebook" ></i></a>
+                        <a href="#!" target="_blank"><i class="form-icon ic-google fa-brands fa-google" ></i></a>
+                        <a href="#!" target="_blank"><i class="form-icon ic-x-twitter fa-brands fa-x-twitter"></i></a>
+                    </div> 
                 </div>
             </form>
         </div>
-
-
     </main>
-    <script src="../SignUp/SignUpStyles.js"></script>
+    <script src="../../../index.js"></script>
     <script>
-
+        Header()
+        Footer()
         Validator({
             form:'#form-3',
             errorSelector:'.form-message',

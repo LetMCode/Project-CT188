@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Balance & Gara</title>
     <meta charset="utf-8" />
@@ -14,18 +15,147 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/Favicon/apple-touch-icon.png" />
     <link rel="manifest" href="../../assets/images/Favicon/site.webmanifest" />
     <link rel="stylesheet" href="../../../node_modules/normalize.css/normalize.css">
-        <link rel="stylesheet" href="../../assets/GlobalStyles/GlobalStyles.css">
-    <link rel="stylesheet" href="../../Layout/DefaultLayout/HeaderStyles.css">
-    <link rel="stylesheet" href="../../Layout/DefaultLayout/FooterStyles.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../../assets/GlobalStyles/grid.css">
+    <link rel="stylesheet" href="../../../styles.css">
 </head>
+
 <body>
     <main>
-        <div class="container">
-            <h1>contact pages</h1>
-        </div>
+        <main>
+            <div class="container">
+                <div class="contact-wrap">
+                    <div class="row">
+
+                        <div class="col-md-12 contact-header">
+                            <!-- <ol class="breadcrumb">
+                                <li class="breadcrumb-items"><a href="index.html">Home</a></li>
+                                <span>&nbsp;/&nbsp;</span>
+                                <li class="breadcrumb-items active"><strong>Contact Us</strong></li>
+                            </ol> -->
+                            <div class="bg-contact">
+                                <h1>Liên hệ</h1>
+                                <p class="p-bottom">Chúng tôi rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho
+                                    chúng tôi nhé. Yêu cầu của bạn sẽ được xử lý và phản hồi trong thời gian sớm nhất.
+                                    Hoặc bạn chỉ cần nhắt điện thoại lên và gọi cho cúng tôi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+
+                        <div class="col-md-6 col-sm-12 col-xs-12 contact-right">
+                            <div class="contact-form">
+                                <h2 class="contact-heading">Gửi thắc mắc cho chúng tôi</h2>
+                                <!--<p class="p-bottom">Chúng tôi rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho chúng tôi nhé. Yêu cầu của bạn sẽ được xử lý và phản hồi trong thời gian sớm nhất.</p>                      
+                            -->
+                                <div class="from">
+
+                                    <form action="" method="POST" class="form" id="form-4">
+
+                                        <div class="row ">
+                                            <div class=" form-group form-floating ">
+                                                <input class="form-control input-contact" type="text" id="fullname" name="fullname"
+                                                    placeholder="Họ và tên">
+                                                <span class="form-message"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <div class=" form-group form-floating ">
+                                                    <input class="form-control input-contact" type="text" id="email" name="email"
+                                                        placeholder="Email">
+                                                    <span class="form-message"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <div class=" form-group form-floating ">
+                                                    <input class="form-control input-contact" type="text" id="phone" name="phone"
+                                                        placeholder="Số điện thoại">
+                                                    <span class="form-message"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class=" form-group form-floating  ">
+                                                <textarea class="form-control input-contact" type="text" placeholder="Nội dung" id="areaText" name="areaText"
+                                                    style="height: 150px;"
+                                                    width="100%"></textarea>
+                                                <span class="form-message"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input class="btn-contact"
+                                                type="submit" value="Gửi liên hệ">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12 contact-left">
+                            <div class="contact-infor">
+                                <h2 class="contact-heading">Thông tin liên hệ</h2>
+                                <div class="infor-us">
+                                    <div class="details-infor">
+                                        <span class="icon-contact__wrap"><i
+                                                class="fas fa-map-marker-alt icon-contact"></i></span>
+                                        <span class="text-infor">Khu II, Đ.3 Tháng 2, Xuân Khánh, Ninh Kiều, Cần
+                                            Thơ</span>
+                                    </div>
+                                    <div class="details-infor">
+                                        <span class="icon-contact__wrap"><i
+                                                class="fas fa-mobile-alt icon-contact"></i></span>
+                                        <a href="#!" class="a-infor"><span class="text-infor">0912528877</span></a>
+                                    </div>
+                                    <div class="details-infor">
+                                        <span class="icon-contact__wrap"><i
+                                                class="fas fa-regular fa-envelope icon-contact"></i></span>
+                                        <a href="#!" class="a-infor"><span
+                                                class="text-infor">ballance&gara@gmail.com</span></a>
+                                    </div>
+                                    <div class="details-infor">
+                                        <span class="icon-contact__wrap"><i
+                                                class="fas fa-regular fa-clock icon-contact"></i></span>
+                                        <span class="text-infor">9:00-21:30 | (T2-T7)</span>
+                                    </div>
+                                </div>
+                                <hr color="#ccc">
+
+                                <div class="maps">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15715.366073286777!2d105.7706153!3d10.0299337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2sCan%20Tho%20University!5e0!3m2!1sen!2s!4v1729496105880!5m2!1sen!2s"
+                                        width="100%" height="250px" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+        </main>
     </main>
-    <script src="../../Layout/DefaultLayout/Header.js"></script>
-    <script src="../../Layout/DefaultLayout/Footer.js"></script>
+    <script src="../../../index.js"></script>
+    <script>
+        Header()
+        Footer()
+
+        Validator({
+            form: '#form-4',
+            errorSelector: '.form-message',
+            formGroupSelector: '.form-group',
+            rules: [
+                Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ'), //#fullname=selector
+                Validator.isRequired('#email', 'Vui lòng nhập Email '),
+                Validator.isEmail('#email', 'Email hoặc SDT chưa chính xác'),
+                Validator.isRequired('#phone','Vui lòng nhập SDT'),
+                Validator.isPhone('#phone','SDT chưa chính xác'),
+                Validator.minLength('#areaText',1,"Vui lòng nhập nội dung")
+            ],
+            onSubmit: function (data) {
+                console.log(data);
+            }
+        });
+    </script>
 </body>
+
 </html>

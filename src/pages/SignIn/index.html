@@ -14,44 +14,43 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/Favicon/apple-touch-icon.png" />
     <link rel="manifest" href="../../assets/images/Favicon/site.webmanifest" />
     <link rel="stylesheet" href="../../../node_modules/normalize.css/normalize.css">
-        <link rel="stylesheet" href="../../assets/GlobalStyles/GlobalStyles.css">
+    <link rel="stylesheet" href="../../assets/GlobalStyles/grid.css">
     <link rel="stylesheet" href="../../../styles.css">
-    <link rel="stylesheet" href="../SignUp/styles.css">
 </head>
-<body>
-    <h1 class="heading">Chào mừng bạn đến với <br>Balance & gara</h5>
-    <main class="m2">
+<body class="form-body">
+    <div class="form-heading">Chào mừng bạn đến với <br>Balance & gara</div>
+    <main class="m2 form-wrap">
         <div class="cot-form">       
             <form action="" method="POST" class="form" id="form-2">
                 <h1 class="Sign">ĐĂNG NHẬP</h1>
                                 <!--Email or sdt-->
                 <div class="form-group">
                     <input id="email" name="email" class="form-control" type="text" placeholder="Email hoặc số điện thoại" >
-                    <span class="form-message"></span>
+                    <br><span class="form-message"></span>
                 </div>
                                 <!--mật khẩu-->
                 <div class="form-group">
                     <input id="password" name="password" class="form-control" type="password" placeholder="Nhập mật khẩu" >
-                    <span class="form-message"></span>
+                    <br><span class="form-message"></span>
                 </div>
-                <button type="submit" class="btn" id="submit-btn" >Xác nhận</button>
+                                <!-- Xác nhận -->
+                <button type="submit" class="form-btn btn-sign" id="submit-btn" >Xác nhận</button>
                 <div class="quenmk">
                     <a href="quenMK.html" target="_blank">Quên mật khẩu ?</a>
                 </div>                                
-                <div class="or">hoặc sử dụng tài khoản</div>
-                <div class="icon">
-                    <a id="ic" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" ></i></a>
-                    <a id="ic" href="https://www.google.com/" target="_blank"><i class="fa-brands fa-google" ></i></a>
-                    <a id="ic" href="https://x.com/__x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
+                <div class="or"><b>hoặc sử dụng tài khoản</b></div>
+                <div class="form-icon">
+                    <a href="#!" target="_blank"><i class="form-icon ic-facebook fa-brands fa-facebook" ></i></a>
+                    <a href="#!" target="_blank"><i class="form-icon ic-google fa-brands fa-google" ></i></a>
+                    <a href="#!" target="_blank"><i class="form-icon ic-x-twitter fa-brands fa-x-twitter"></i></a>
+                </div> 
             </form>
         </div>
         <div class="cot-nd"> 
-            <h1>Xin Chào</h1>
-            <h3>Nếu bạn đã có tài khoản <br>Hãy đăng nhập ở đây</h3>
-            <a href="../SignUp/index.html"> <button class="ca2">Đăng Ký</button></a>         
+            <h2>Xin Chào</h2>
+            <h3>Nếu bạn chưa có tài khoản <br>Hãy đăng ký ở đây</h3>
+            <a href="../SignUp/index.html"> <button class="form-btn ca2">Đăng Ký</button></a>         
         </div>
-
     </main>
     <script src="../../../index.js"></script>
     <script>
