@@ -19,6 +19,7 @@
     --primary-color__stick-after: #000;
     --primary-color__strong: #000;
     --primary-color__text__btn: #fff;
+    --primary-color__btn-hover: #000;
     --primary-boxShadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
     --primary-boxShadow__item: 0 0 6px 0 rgba(0, 0, 0, 0.2);
     --primary-boxShadow__navbar: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -46,7 +47,6 @@
     --primary-border-radius__input_btn: 10px;
     --primary-border: 1px solid #ccc;
     --primary-flex-gap: 15px;
-    
 }
 
 html {
@@ -486,7 +486,7 @@ h3.title-sp a:hover {
     cursor: pointer;
 }
 
-.product-img:hover .product-content a{
+.product-img:hover .product-content a {
     opacity: 1;
     transition: 0.3s;
     text-decoration: none;
@@ -507,7 +507,6 @@ h3.title-sp a:hover {
 .product-content {
     padding: 8px;
 }
-
 
 .product-content a {
     color: var(--primary-color__text__heading);
@@ -624,7 +623,6 @@ span.price-sale {
 }
 
 .item-info a {
-
     font-size: var(--primary-fontsize-heading);
 
     color: #000;
@@ -918,18 +916,19 @@ a.btn-home {
     font-weight: var(--primary-font-weight__bold);
     border-radius: var(--primary-border-radius__btn);
     display: inline-block;
+    text-transform: uppercase;
 }
 
-a.btn:hover {
-    background-color: #1d71b9;
-    color: var(--primary-color__navbar);
+a.btn-home:hover {
+    background-color: var(--primary-color__btn-hover);
+    color: var(--primary-color__text-while);
     transition: 0.3s;
     cursor: pointer;
     transform: scale(1.1);
 }
 
 .widget a {
-    color: var(--primary-color__navbar);
+    color: var(--primary-color__text-while);
     font-size: var(--primary-fontsize-desc);
 }
 
@@ -956,67 +955,67 @@ a.btn:hover {
     margin-bottom: 30px;
     padding: 10px;
     margin-right: 30px;
-  }
-  .box-bst-intro p {
+}
+.box-bst-intro p {
     margin: 10px;
     text-align: justify;
     background-color: rgba(250, 235, 215, 0.8);
     padding: 20px;
     border-radius: var(--primary-border-radius__item);
-  }
-  .canbo {
+}
+.canbo {
     border-radius: var(--primary-border-radius__sl);
     border: var(--primary-border);
     text-align: center;
     padding: 5px;
-  }
-  .col-12.product-list {
+}
+.col-12.product-list {
     margin-top: 10px;
     text-align: justify;
-  }
-  .side-box img {
+}
+.side-box img {
     border-radius: var(--primary-border-radius__sl);
-  }
-  .camhung-text {
+}
+.camhung-text {
     text-align: justify;
     margin-bottom: 30px;
-  }
-  .anh img {
+}
+.anh img {
     border-top: 5px solid rgb(255, 187, 0);
     border-left: 5px solid rgb(255, 187, 0);
     box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
     pointer-events: none;
     width: 100%;
-  }
-  .anh:hover {
+}
+.anh:hover {
     cursor: pointer;
     transition: 0.3s ease-in;
     transform: scale(1.1);
-  }
-  .text-camhung {
+}
+.text-camhung {
     margin: 10px;
     text-align: justify;
     margin-left: 30px;
-  }
-  .tieude p {
+}
+.tieude p {
     font-size: 40px;
     margin-bottom: 10px;
     font-family: "Lobster", cursive;
     text-align: center;
     color: #ff9500;
     text-shadow: 0 1px 0 #ff9d14, 0 2px 0 #fb970c, 0 3px 0 #ffaf3f,
-      0 4px 0 #ff9500, 0 5px 0 #ffa528, 0 6px 0 #ffb245, 0 7px 0 #f6c37d,
-      0 8px 7px #ff9500ba, 0 9px 10px #ff950074;
-  }
-  .tieude p:hover {
+        0 4px 0 #ff9500, 0 5px 0 #ffa528, 0 6px 0 #ffb245, 0 7px 0 #f6c37d,
+        0 8px 7px #ff9500ba, 0 9px 10px #ff950074;
+}
+.tieude p:hover {
     cursor: pointer;
     transition: 0.3s ease-in;
     transform: scale(1.3);
-  }
-  .sumenh {
+}
+.sumenh {
     margin-bottom: 30px;
-  }
-  .dausumenh {
+}
+.dausumenh {
     margin: 10px 25px;
     border: var(--primary-border);
     text-align: justify;
@@ -1025,17 +1024,17 @@ a.btn:hover {
     position: relative;
     transition: 1s box-shadow, 0.5s transform, 0.5s border-color;
     z-index: 1;
-  }
-  
-  .dausumenh:hover {
+}
+
+.dausumenh:hover {
     box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1);
     transform: scale(1.1);
     border-color: transparent;
     z-index: 10;
     background: #f3ce5e;
-  }
-  .dausumenh:hover::before,
-  .dausumenh:hover::after {
+}
+.dausumenh:hover::before,
+.dausumenh:hover::after {
     display: block;
     content: "";
     position: absolute;
@@ -1044,121 +1043,121 @@ a.btn:hover {
     border-radius: var(--primary-border-radius__item);
     z-index: -1;
     animation: 1s clockwise infinite;
-  }
-  
-  .dausumenh:hover::before {
+}
+
+.dausumenh:hover::before {
     background: #fda8cf;
     z-index: -1;
-  }
-  
-  .dausumenh:hover::after {
+}
+
+.dausumenh:hover::after {
     background: #ffffff;
     animation: 2s counterclockwise infinite;
     z-index: -1;
-  }
-  
-  @keyframes clockwise {
+}
+
+@keyframes clockwise {
     0% {
-      top: -5px;
-      left: 0;
+        top: -5px;
+        left: 0;
     }
     12% {
-      top: -2px;
-      left: 2px;
+        top: -2px;
+        left: 2px;
     }
     25% {
-      top: 0;
-      left: 5px;
+        top: 0;
+        left: 5px;
     }
     37% {
-      top: 2px;
-      left: 2px;
+        top: 2px;
+        left: 2px;
     }
     50% {
-      top: 5px;
-      left: 0;
+        top: 5px;
+        left: 0;
     }
     62% {
-      top: 2px;
-      left: -2px;
+        top: 2px;
+        left: -2px;
     }
     75% {
-      top: 0;
-      left: -5px;
+        top: 0;
+        left: -5px;
     }
     87% {
-      top: -2px;
-      left: -2px;
+        top: -2px;
+        left: -2px;
     }
     100% {
-      top: -5px;
-      left: 0;
+        top: -5px;
+        left: 0;
     }
-  }
-  
-  @keyframes counterclockwise {
+}
+
+@keyframes counterclockwise {
     0% {
-      top: -5px;
-      right: 0;
+        top: -5px;
+        right: 0;
     }
     12% {
-      top: -2px;
-      right: 2px;
+        top: -2px;
+        right: 2px;
     }
     25% {
-      top: 0;
-      right: 5px;
+        top: 0;
+        right: 5px;
     }
     37% {
-      top: 2px;
-      right: 2px;
+        top: 2px;
+        right: 2px;
     }
     50% {
-      top: 5px;
-      right: 0;
+        top: 5px;
+        right: 0;
     }
     62% {
-      top: 2px;
-      right: -2px;
+        top: 2px;
+        right: -2px;
     }
     75% {
-      top: 0;
-      right: -5px;
+        top: 0;
+        right: -5px;
     }
     87% {
-      top: -2px;
-      right: -2px;
+        top: -2px;
+        right: -2px;
     }
     100% {
-      top: -5px;
-      right: 0;
+        top: -5px;
+        right: 0;
     }
-  }
-  .anhhoatdong {
+}
+.anhhoatdong {
     border-radius: var(--primary-border-radius__sl);
     width: 25%;
-  }
-  .anhhoatdong:hover {
+}
+.anhhoatdong:hover {
     cursor: pointer;
     transition: 0.3s ease-in;
     transform: scale(1.25);
     z-index: 10;
-  }
-  .text-hoatdong {
+}
+.text-hoatdong {
     display: flex;
     align-items: center;
-  }
+}
 
-  /* timeline hành trình phát triển */
-  .timeline {
+/* timeline hành trình phát triển */
+.timeline {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px 0;
     list-style: none;
-  }
-  
-  .timeline::before {
+}
+
+.timeline::before {
     content: "";
     position: absolute;
     top: 0;
@@ -1167,23 +1166,23 @@ a.btn:hover {
     width: 2px;
     background-color: #3498db;
     transform: translateX(-50%);
-  }
-  
-  .timeline-item {
+}
+
+.timeline-item {
     display: flex;
     justify-content: flex-end;
     padding: 10px 20px;
     position: relative;
     width: 50%;
     box-sizing: border-box;
-  }
-  
-  .timeline-item:nth-child(even) {
+}
+
+.timeline-item:nth-child(even) {
     justify-content: flex-start;
     left: 50%;
-  }
-  
-  .timeline-item::before {
+}
+
+.timeline-item::before {
     content: "";
     position: absolute;
     top: 20px;
@@ -1193,33 +1192,33 @@ a.btn:hover {
     background-color: #3498db;
     border-radius: 50%;
     box-shadow: 0 0 0 3px #fff;
-  }
-  
-  .timeline-item:nth-child(even)::before {
+}
+
+.timeline-item:nth-child(even)::before {
     right: auto;
     left: -15px;
-  }
-  
-  .timeline-date {
+}
+
+.timeline-date {
     font-size: 18px;
     font-weight: bold;
     color: #3498db;
-  }
-  
-  .timeline-content {
+}
+
+.timeline-content {
     background-color: #fff;
     padding: 15px;
     border-radius: var(--primary-border-radius__item);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     width: 80%;
     text-align: justify;
-  }
-  .timeline-content:hover {
+}
+.timeline-content:hover {
     cursor: pointer;
     transition: 0.3s ease-in;
     transform: scale(1.3);
-  }
-  .timeline-content::after {
+}
+.timeline-content::after {
     content: ">";
     position: absolute;
     bottom: 10px;
@@ -1234,13 +1233,41 @@ a.btn:hover {
     justify-content: center;
     transition: background-color 0.2s ease-in, opacity 0.2s ease-in;
     opacity: 0;
-  }
-  
-  .timeline-content:hover::after {
+}
+
+.timeline-content:hover::after {
     background-color: #77777750;
     opacity: 1;
-  }
-  
+}
+
+/* End IntroPage */
+
+/* Policies */
+.anh img {
+    border-bottom: 5px solid rgb(144, 144, 144);
+    border-right: 5px solid rgb(144, 144, 144);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-left: 15px;
+    border-top: 0px solid rgba(255, 255, 255, 0);
+    border-left: 0px solid rgba(255, 255, 255, 0);
+}
+.tieude p {
+    font-size: var(--primary-fontsize-heading);
+}
+.timeline-date {
+    margin-right: 10px;
+}
+.text-camhung {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.text-baohanh {
+    text-align: justify;
+    margin: 10px 30px;
+}
+.box-bst-policies {
+    background-image: none;
+}
 
 /* Product */
 
@@ -1479,6 +1506,24 @@ a.btn:hover {
 
 .item-product__other-btn:active {
     opacity: var(--primary-opacity__active);
+}
+
+.list-page__product{
+    display: flex;
+    padding: 30px 0;
+    gap: var(--primary-flex-gap);
+}
+
+.page-node__product{
+    opacity: 0.5;
+    margin: 30px 6px;
+}
+.page-node__current{
+    opacity: 1;
+}
+.icon-next__page-node{
+    position: relative;
+    transform: translateY(10%);
 }
 /* End:Product */
 
