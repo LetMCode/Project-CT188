@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../../../node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="../../assets/GlobalStyles/grid.css">
     <link rel="stylesheet" href="../../../styles.css">
-    <link rel="stylesheet" href="./styles.css">
+
 </head>
 
 <body>
@@ -288,14 +288,14 @@
                         <div class="canbo">
                             <a class="btn-home">Nhân sự nồng cốt</a>
                             <div class="col-12 product-list">
-                                <div class="row">
-                                    <div class="col-4">
+                                <div class="row ">
+                                    <div class="col-4 staff-wrap ">
                                         <div class="side-box">
                                             <img src="../../assets/images/IntroIMG/nhansu1.jpg" width="98px"
                                                 height="98px" />
                                         </div>
                                     </div>
-                                    <div class="col-8">
+                                    <div class="col-8 staff-wrap__column">
                                         <p>
                                             <strong>Họ Tên: </strong>Nguyễn Hoàng Minh<br />
                                             <strong>Ngày Sinh: </strong>1990<br />
@@ -308,13 +308,13 @@
                             </div>
                             <div class="col-12 product-list">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-4 staff-wrap">
                                         <div class="side-box">
                                             <img src="../../assets/images/IntroIMG/nhansu2.jpg" width="98px"
                                                 height="98px" />
                                         </div>
                                     </div>
-                                    <div class="col-8">
+                                    <div class="col-8 staff-wrap__column">
                                         <p>
                                             <strong>Họ Tên: </strong>Trần Bình An<br />
                                             <strong>Ngày Sinh: </strong>1991<br />
@@ -327,13 +327,13 @@
                             </div>
                             <div class="col-12 product-list">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-4 staff-wrap">
                                         <div class="side-box">
                                             <img src="../../assets/images/IntroIMG/nhansu3.jpg" width="98px"
                                                 height="98px" />
                                         </div>
                                     </div>
-                                    <div class="col-8">
+                                    <div class="col-8 staff-wrap__column">
                                         <p>
                                             <strong>Họ Tên: </strong>Lê Thành Nam<br />
                                             <strong>Ngày Sinh: </strong>1995<br />
@@ -619,8 +619,9 @@
     </main>
     <script src="../../../index.js"></script>
     <script>
-        Header()
+        handleHeader.start()
         Footer()
+        ProductJS.renderIconQuantityCartForPages()
     </script>
 </body>
 

@@ -45,6 +45,9 @@
             </div>
             <ul class="list-page__product">
                 <li>
+                    <a class="next__page-node" href="./index.html">
+                        <i class="fa-solid fa-arrow-left-long icon__page-node"></i>
+                    </a>
                     <a href="./index.html" class="page-node__product ">1</a>
                     <span class="page-node__product page-node__current">2</span>
                     <a href="./page3.html" class="page-node__product">3</a>
@@ -62,9 +65,9 @@
     </main>
     <script src="../../../index.js"></script>
     <script>
-        Header()
+        handleHeader.start()
         Footer()
-        ProductJS.start()
+        ProductJS.start(1)
     </script>
     
 </body>

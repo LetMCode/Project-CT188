@@ -22,28 +22,25 @@
 <body>
     <main>
         <main>
+            <div class="contact-wrap__heading">
+                 <div class="row">
+
+                     <div class="col-md-12 contact-header">
+                         <div class="bg-contact">
+                             <h1 class="contact__heading">Liên hệ</h1>
+                             <p class="p-bottom">Chúng tôi rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho
+                                 chúng tôi nhé.<br> Yêu cầu của bạn sẽ được xử lý và phản hồi trong thời gian sớm nhất.
+                                 <br>Hoặc bạn chỉ cần nhắt điện thoại lên và gọi cho cúng tôi.</p>
+                         </div>
+                     </div>
+                 </div>
+            </div>
             <div class="container">
                 <div class="contact-wrap">
                     <div class="row">
 
-                        <div class="col-md-12 contact-header">
-                            <!-- <ol class="breadcrumb">
-                                <li class="breadcrumb-items"><a href="index.html">Home</a></li>
-                                <span>&nbsp;/&nbsp;</span>
-                                <li class="breadcrumb-items active"><strong>Contact Us</strong></li>
-                            </ol> -->
-                            <div class="bg-contact">
-                                <h1>Liên hệ</h1>
-                                <p class="p-bottom">Chúng tôi rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho
-                                    chúng tôi nhé. Yêu cầu của bạn sẽ được xử lý và phản hồi trong thời gian sớm nhất.
-                                    Hoặc bạn chỉ cần nhắt điện thoại lên và gọi cho cúng tôi.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
 
-
-                        <div class="col-md-6 col-sm-12 col-xs-12 contact-right">
+                        <div class="col-md-6 col-sm-12 col-12 contact-right">
                             <div class="contact-form">
                                 <h2 class="contact-heading">Gửi thắc mắc cho chúng tôi</h2>
                                 <!--<p class="p-bottom">Chúng tôi rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho chúng tôi nhé. Yêu cầu của bạn sẽ được xử lý và phản hồi trong thời gian sớm nhất.</p>                      
@@ -60,14 +57,14 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="col-md-6 col-sm-12 col-12">
                                                 <div class=" form-group form-floating ">
                                                     <input class="form-control input-contact" type="text" id="email" name="email"
                                                         placeholder="Email">
                                                     <span class="form-message"></span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="col-md-6 col-sm-12 col-12">
                                                 <div class=" form-group form-floating ">
                                                     <input class="form-control input-contact" type="text" id="phone" name="phone"
                                                         placeholder="Số điện thoại">
@@ -91,7 +88,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12 contact-left">
+                        <div class="col-md-6 col-sm-12 col-12 contact-left">
                             <div class="contact-infor">
                                 <h2 class="contact-heading">Thông tin liên hệ</h2>
                                 <div class="infor-us">
@@ -136,9 +133,9 @@
     </main>
     <script src="../../../index.js"></script>
     <script>
-        Header()
+        handleHeader.start()
         Footer()
-
+        ProductJS.renderIconQuantityCartForPages()
         Validator({
             form: '#form-4',
             errorSelector: '.form-message',

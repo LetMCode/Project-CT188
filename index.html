@@ -23,10 +23,16 @@
   <header>
     <div class="container">
       <div class="header-wrap">
+        <span class="icon-menu__header">
+          <i class="fa-solid fa-bars"></i>
+        </span>
         <a href="./index.html" class="logo-home">
           <img src="./src/assets/images/HomeIMG/logo1.png" alt="" class="logo-pages">
         </a>
         <ul class="list-pages">
+          <li class="item-page item-page__home">
+            <a href="./src/pages/Intro/index.html" class="item-label">Home</a>
+          </li>
           <li class="item-page">
             <a href="./src/pages/Intro/index.html" class="item-label">Giới thiệu</a>
           </li>
@@ -42,15 +48,15 @@
         </ul>
         <ul class="list-actions">
           <li class="item-page__action item-page__action-icon">
-            <a href="./src/pages/Cart/index.html" class="item-label icon-cart">
+            <a href="./src/pages/Cart/index.html" class=" icon-cart">
               <i class="fa-solid fa-cart-shopping "></i>
             </a>
           </li>
-          <li class="item-page__action">
-            <a href="./src/pages/SignUp/index.html" class="item-label">Đăng ký</a>
+          <li class="item-page__action item-page__action__sign-up">
+            <a href="./src/pages/SignUp/index.html" class=" ">Đăng ký</a>
           </li>
           <li class="item-page__action btn__signUp">
-            <a href="./src/pages/SignIn/index.html" class="item-label">Đăng nhập</a>
+            <a href="./src/pages/SignIn/index.html" class="">Đăng nhập</a>
           </li>
         </ul>
       </div>
@@ -67,8 +73,7 @@
       <div class="controls">
         <button class="control-btn" id="prevBtn">
           <h3>
-            < 
-          </h3>
+            < </h3>
         </button>
         <button class="control-btn" id="nextBtn">
           <h3>></h3>
@@ -1169,6 +1174,7 @@
 
   <script src="./index.js"> </script>
   <script>
+    handleHeader.handleEventHeader()
     HomePageJS.handleEvent()
     ProductJS.renderIconQuantityCartForPages()
   </script>

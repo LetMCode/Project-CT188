@@ -10,49 +10,74 @@ var posIconCart = document.createElement("span");
 var list = document.querySelector(".list-item");
 var toastMsg = document.querySelector(".toastMsg-wrap");
 var totalSlides = slideImages.length;
-var shoesAPI = "http://localhost:3000/shoes";
+var shoesAPI = "http://localhost:3000/product";
 var cartUserAPI = "http://localhost:3000/cartUser";
 
 let currentIndex = 0;
-function Header() {
-    const html = `
-    <div class="container">
-            <div class="header-wrap">
-                <a href="../../../index.html" class="logo-link">
-                    <img src="../../assets/images/HomeIMG/logo1.png"/ alt="" class="logo-pages">
-                </a>
-                <ul class="list-pages">
-                    <li class="item-page">
-                        <a href="../Intro/index.html" class="item-label">Giới thiệu</a>
-                    </li>
-                    <li class="item-page">
-                        <a href="../Product/index.html" class="item-label">Sản phẩm</a>
-                    </li>
-                    <li class="item-page">
-                        <a href="../Blogs/index.html" class="item-label">Blogs</a>
-                    </li>
-                    <li class="item-page">
-                        <a href="../Contact/index.html" class="item-label">Liên hệ</a>
-                    </li>
-                </ul>
-                <ul class="list-actions">
-                    <li class="item-page__action item-page__action-icon">
-                    <a href="../Cart/index.html" class="item-label icon-cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
+
+const handleHeader = {
+    renderHeader:function() {
+        const html = `
+        <div class="container">
+                <div class="header-wrap">
+                    <span class="icon-menu__header">
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                    <a href="../../../index.html" class="logo-link">
+                        <img src="../../assets/images/HomeIMG/logo1.png"/ alt="" class="logo-pages">
                     </a>
-                    </li>
-                    <li class="item-page__action">
-                        <a href="../SignUp/index.html" class="item-label">Đăng ký</a>
-                    </li>
-                    <li class="item-page__action btn__signUp">
-                        <a href="../SignIn/index.html" class="item-label">Đăng nhập</a>
-                    </li>
-                </ul>
+                    <ul class="list-pages ">
+                        <li class="item-page item-page__home">
+                            <a href="../../../index.html" class="item-label">Home</a>
+                        </li>
+                        <li class="item-page">
+                            <a href="../Intro/index.html" class="item-label">Giới thiệu</a>
+                        </li>
+                        <li class="item-page">
+                            <a href="../Product/index.html" class="item-label">Sản phẩm</a>
+                        </li>
+                        <li class="item-page">
+                            <a href="../Blogs/index.html" class="item-label">Blogs</a>
+                        </li>
+                        <li class="item-page">
+                            <a href="../Contact/index.html" class="item-label">Liên hệ</a>
+                        </li>
+                    </ul>
+                    <ul class="list-actions">
+                        <li class="item-page__action item-page__action-icon">
+                        <a href="../Cart/index.html" class=" icon-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                        </li>
+                        <li class="item-page__action item-page__action__sign-up">
+                            <a href="../SignUp/index.html" >Đăng ký</a>
+                        </li>
+                        <li class="item-page__action btn__signUp">
+                            <a href="../SignIn/index.html" >Đăng nhập</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    `;
-    header.innerHTML = html;
-    return body.appendChild(header);
+        `;
+        header.innerHTML = html;
+        return body.appendChild(header);
+    },
+    handleEventHeader: function() {
+        var btnMenu = document.querySelector('.icon-menu__header')
+        var listPage = document.querySelector('.list-pages')
+        btnMenu.addEventListener("click",()=>{
+            if(listPage.classList.contains("list-pages__active")){
+                listPage.classList.remove('list-pages__active')
+            }
+            else{
+                listPage.classList.add('list-pages__active')            
+            }
+        })
+    },
+    start:function(){
+        this.renderHeader()
+        this.handleEventHeader()
+    }
 }
 
 function Footer() {
@@ -79,20 +104,20 @@ function Footer() {
                         <div class="item-footer__center-content">
                             <label class="item-footer__center-label">Sản phẩm</label>
                             <ul>
-                                <a href="#!" class="">Bộ sưu tập 2024</a>
-                                <a href="#!" class="">Bộ sưu tập Signature</a>
-                                <a href="#!" class="">Sản phẩm nổi bật</a>
-                                <a href="#!" class="">Sản phẩm bán chạy</a>
-                                <a href="#!" class="">Sản phẩm khuyến mãi</a>
+                                <a href="../Product/index.html" class="">Bộ sưu tập 2024</a>
+                                <a href="../Product/index.html" class="">Bộ sưu tập Signature</a>
+                                <a href="../Product/index.html" class="">Sản phẩm nổi bật</a>
+                                <a href="../Product/index.html" class="">Sản phẩm bán chạy</a>
+                                <a href="../Product/index.html" class="">Sản phẩm khuyến mãi</a>
                             </ul>
                         </div>
                         <div class="item-footer__center-content">
                             <label class="item-footer__center-label">Contract With Us</label>
                             <ul>
-                                <li><a href="#!" class="">Đặt hàng số lượng lớn</a></li>
-                                <li><a href="#!" class="">Khách hàng doanh nghiệp</a></li>
-                                <li><a href="#!" class="">Hợp tác phối hợp</a></li>
-                                <li><a href="#!" class="">Hợp tác doanh nghiệp</a></li>
+                                <li><a href="../Contact/index.html" class="">Đặt hàng số lượng lớn</a></li>
+                                <li><a href="../Contact/index.html" class="">Khách hàng doanh nghiệp</a></li>
+                                <li><a href="../Contact/index.html" class="">Hợp tác phối hợp</a></li>
+                                <li><a href="../Contact/index.html" class="">Hợp tác doanh nghiệp</a></li>
                             </ul>
                         </div>
                     </li>
@@ -118,22 +143,22 @@ function Footer() {
                     <div class="item-footer__bottom-center">
                         <ul class="item-footer__bottom-list">
                             <li>
-                                <a href="#!" class="item-footer__bottom-desc">
+                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
                                     Đổi trả
                                 </a>
                             </li>
                             <li>
-                                <a href="#!" class="item-footer__bottom-desc">
+                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
                                     chính sách thanh toán
                                 </a>
                             </li>
                             <li>
-                                <a href="#!" class="item-footer__bottom-desc">
+                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
                                     chính sách giao hàng
                                 </a>
                             </li>
                             <li>
-                                <a href="#!" class="item-footer__bottom-desc">
+                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
                                     hướng dẫn mua hàng
                                 </a>
                             </li>
@@ -142,12 +167,12 @@ function Footer() {
                     <div class="item-footer__bottom-right">
                         <ul class="item-footer__bottom-list">
                             <li>
-                                <a href="#!" class="item-footer__bottom-desc">
+                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
                                     Điều Khoản Sử Dụng
                                 </a>
                             </li>
                             <li>
-                                <a href="#!" class="item-footer__bottom-desc">
+                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
                                     Chính Sách Bảo Mật
                                 </a>
                             </li>
@@ -413,19 +438,19 @@ Validator.isConfirm = function (selector, getconfirm, message) {
 
 // ProductPage & CartPage
 
-function getItem(data, callback) {
+function getItem(id,data, callback) {
     var options = {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
     };
-    fetch(shoesAPI + "/" + data, options)
+    fetch(shoesAPI, options)
         .then(function (response) {
             return response.json();
         })
-
-        .then(callback);
+        .then(product => product[id].page[data-1])
+        .then(callback)
 }
 
 function addItem(data, callback) {
@@ -492,7 +517,7 @@ function toastMessage() {
 function calPrice(data) {
     let total = 0;
     data.map((item) => {
-        total += parseInt(item.price.split(/[\.0VND]/).join(""));
+        total += parseInt(item.price.split(/\.|000VND/).join(""));
     });
     usingToPrintTotal = String(total);
     if (total >= 1000 && total < 10000) {
@@ -522,18 +547,20 @@ function calPrice(data) {
 }
 
 const ProductJS = {
-    getProductAPI: function (callback) {
+    getProductAPI: function (callback,id) {
+        console.log(shoesAPI)
         fetch(shoesAPI)
             .then((response) => response.json())
-            .then(callback);
+            .then(data => callback(data,id));
     },
     getCartAPI: function (callback) {
         fetch(cartUserAPI)
             .then((response) => response.json())
             .then(callback);
     },
-    renderProductAPI: function (ListOfAPI) {
-        const html = ListOfAPI.map((item) => {
+    renderProductAPI: function (ListOfAPI,id) {
+        
+        const html = ListOfAPI[id].page.map((item) => {
             return `
                 <div data-id="${item.id}" class="item-product">
                     <img src="${item.img}" alt="" class="item-product__img">
@@ -554,7 +581,7 @@ const ProductJS = {
                             Price: ${item.price}
                         </p>
                     </div>
-                    <button onclick ="getItem(${item.id},handleOther)" class="item-product__other-btn">
+                    <button onclick ="getItem(${id},${item.id},handleOther)" class="item-product__other-btn">
                         Other
                     </button>
                 </div>
@@ -574,9 +601,9 @@ const ProductJS = {
     renderIconQuantityCartForPages: function(){
         this.getCartAPI(this.renderIconQuantityCart);
     },
-    start: function () {
+    start: function (id) {   
+        this.getProductAPI(this.renderProductAPI,id)
         this.getCartAPI(this.renderIconQuantityCart);
-        this.getProductAPI(this.renderProductAPI);
     },
 };
 
@@ -626,12 +653,14 @@ const CartPageJS = {
             const htmls = data.map((item) => {
                 return `
           <div class="item-cart" data-id="${item.id}">
-          <img src="${item.img}" alt="" class="item-cart__img">
-          <h4 class="item-cart__heading">${item.name}</h4>
-          <h5 class="item-cart__code">${item.code}</h5>
-          <p class="item-cart__size">Size: ${item.size}</p>
-          <p class="item-cart__price">${item.price}</p>
-          <button onclick="getItem(${item.id},handleDeleteItem)" class="btn-delete__cart" >&times Delete</button>
+            <img src="${item.img}" alt="" class="item-cart__img">
+            <div class="item-cart__info col-lg-8">
+                <h4 class="item-cart__heading">${item.name}</h4>
+                <h5 class="item-cart__code">${item.code}</h5>
+                <p class="item-cart__size">Size: ${item.size}</p>
+                <p class="item-cart__price">${item.price}</p>
+            </div>
+            <button onclick="getItem(0,${item.id},handleDeleteItem)" class="btn-delete__cart" >&times Delete</button>
           </div>
           `;
             });
@@ -643,7 +672,7 @@ const CartPageJS = {
         }
     },
     
-    start: function () {
+    start: function (id) {
         this.getCartAPI(this.renderCart);
         this.getCartAPI(this.renderIconQuantityCart);
         this.getCartAPI(this.renderTotalPrice);
