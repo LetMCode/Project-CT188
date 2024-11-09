@@ -52,12 +52,18 @@
               <i class="fa-solid fa-cart-shopping "></i>
             </a>
           </li>
-          <li class="item-page__action item-page__action__sign-up">
-            <a href="./src/pages/SignUp/index.html" class=" ">Đăng ký</a>
-          </li>
-          <li class="item-page__action btn__signUp">
-            <a href="./src/pages/SignIn/index.html" class="">Đăng nhập</a>
-          </li>
+          <li class="item-page__action item-page__action-fragment ">
+            <span class="icon-action__wrap">
+                <i class="fa-solid fa-user"></i>
+            </span>
+            <div class="item-page__action-wrap">
+                
+                <div class="item-page__action__sign-in">
+                    <a href="./src/pages/SignIn/index.html" >Đăng nhập</a>
+                </div>
+                <a class="item-page__action__sign-up" href="./src/pages/SignUp/index.html" >Đăng ký</a>
+            </div>
+        </li>
         </ul>
       </div>
     </div>
@@ -1175,6 +1181,7 @@
   <script src="./index.js"> </script>
   <script>
     handleHeader.handleEventHeader()
+    handleFooter.renderBtn()
     HomePageJS.handleEvent()
     ProductJS.renderIconQuantityCartForPages()
   </script>

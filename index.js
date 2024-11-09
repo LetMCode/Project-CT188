@@ -16,7 +16,7 @@ var cartUserAPI = "http://localhost:3000/cartUser";
 let currentIndex = 0;
 
 const handleHeader = {
-    renderHeader:function() {
+    renderHeader: function () {
         const html = `
         <div class="container">
                 <div class="header-wrap">
@@ -49,11 +49,17 @@ const handleHeader = {
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         </li>
-                        <li class="item-page__action item-page__action__sign-up">
-                            <a href="../SignUp/index.html" >Đăng ký</a>
-                        </li>
-                        <li class="item-page__action btn__signUp">
-                            <a href="../SignIn/index.html" >Đăng nhập</a>
+                        <li class="item-page__action item-page__action-fragment ">
+                            <span class="icon-action__wrap">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <div class="item-page__action-wrap">
+                                
+                                <div class="item-page__action__sign-in">
+                                    <a href="../SignIn/index.html" >Đăng nhập</a>
+                                </div>
+                                <a class="item-page__action__sign-up" href="../SignUp/index.html" >Đăng ký</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -62,26 +68,41 @@ const handleHeader = {
         header.innerHTML = html;
         return body.appendChild(header);
     },
-    handleEventHeader: function() {
-        var btnMenu = document.querySelector('.icon-menu__header')
-        var listPage = document.querySelector('.list-pages')
-        btnMenu.addEventListener("click",()=>{
-            if(listPage.classList.contains("list-pages__active")){
-                listPage.classList.remove('list-pages__active')
-            }
-            else{
-                listPage.classList.add('list-pages__active')            
+    handleEventHeader: function () {
+        var btnMenu = document.querySelector(".icon-menu__header");
+        var listPage = document.querySelector(".list-pages");
+        var btnIconHeader = document.querySelector(".icon-action__wrap")
+        var wrapSign = document.querySelector(".item-page__action-wrap")
+        btnIconHeader.addEventListener("click",() =>{
+            if(wrapSign.classList.contains("icon-action__wrap__active")){
+                wrapSign.classList.remove("icon-action__wrap__active")
+            }else{
+                wrapSign.classList.add("icon-action__wrap__active")
             }
         })
+
+        btnMenu.addEventListener("click", () => {
+            if (listPage.classList.contains("list-pages__active")) {
+                listPage.classList.remove("list-pages__active");
+            } else {
+                listPage.classList.add("list-pages__active");
+            }
+        });
     },
-    start:function(){
-        this.renderHeader()
-        this.handleEventHeader()
-    }
+    start: function () {
+        this.renderHeader();
+        this.handleEventHeader();
+    },
+};
+
+
+function renderBtn() {
+    
 }
 
-function Footer() {
-    const html = `
+const handleFooter = {
+    renderFooter: function () {
+        const html = `
        <div class="container">
             <div class="footer">
                 <ul class="list-footer">
@@ -182,9 +203,25 @@ function Footer() {
             </div>
         </div>
     `;
-    footer.innerHTML = html;
-    return body.appendChild(footer);
-}
+        footer.innerHTML = html;
+        return body.appendChild(footer);
+    },
+    renderBtn:function(){
+        const btnTurnBack = document.createElement("div");
+        body.setAttribute("id", "body");
+        const htmls = `
+            <a href="#body" class="btn__turn-back">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </a>
+        `;
+        btnTurnBack.innerHTML = htmls;
+        return body.appendChild(btnTurnBack);
+    },
+    start: function() {
+        this.renderFooter()
+        this.renderBtn();
+    }
+};
 
 function showSlide(index) {
     if (index >= totalSlides) {
@@ -204,38 +241,35 @@ function prevSlide() {
 }
 // Ảnh hàng
 const HomePageJS = {
-    handleEvent: function(){
-      setInterval(nextSlide, 3500);
-      document.querySelectorAll(".product-img img").forEach((img) => {
-        const originalSrc = img.src;
-        const hoverSrc = img.getAttribute("data-hover");
-        img.addEventListener("mouseover", () => {
-          img.src = hoverSrc;
-        });
-        img.addEventListener("mouseout", () => {
-          img.src = originalSrc;
-        });
-      });
-      
-      document.querySelectorAll(".box-product .color-dot").forEach((dot) => {
-        dot.addEventListener("click", () => {
-          const newSrc = dot.getAttribute("data-img-src");
-          dot
-            .closest(".box-product")
-            .querySelectorAll(".product-img img")
-            .forEach((img) => {
-              img.src = newSrc;
+    handleEvent: function () {
+        setInterval(nextSlide, 3500);
+        document.querySelectorAll(".product-img img").forEach((img) => {
+            const originalSrc = img.src;
+            const hoverSrc = img.getAttribute("data-hover");
+            img.addEventListener("mouseover", () => {
+                img.src = hoverSrc;
+            });
+            img.addEventListener("mouseout", () => {
+                img.src = originalSrc;
             });
         });
-      });
-      nextBtn.addEventListener("click", nextSlide);
-      prevBtn.addEventListener("click", prevSlide);
-    },
-}
 
+        document.querySelectorAll(".box-product .color-dot").forEach((dot) => {
+            dot.addEventListener("click", () => {
+                const newSrc = dot.getAttribute("data-img-src");
+                dot.closest(".box-product")
+                    .querySelectorAll(".product-img img")
+                    .forEach((img) => {
+                        img.src = newSrc;
+                    });
+            });
+        });
+        nextBtn.addEventListener("click", nextSlide);
+        prevBtn.addEventListener("click", prevSlide);
+    },
+};
 
 // Đổi ảnh khi click vào các chấm màu
-
 
 // DANH
 function Validator(options) {
@@ -438,7 +472,7 @@ Validator.isConfirm = function (selector, getconfirm, message) {
 
 // ProductPage & CartPage
 
-function getItem(id,data, callback) {
+function getItem(id, data, callback) {
     var options = {
         method: "GET",
         headers: {
@@ -449,8 +483,8 @@ function getItem(id,data, callback) {
         .then(function (response) {
             return response.json();
         })
-        .then(product => product[id].page[data-1])
-        .then(callback)
+        .then((product) => product[id].page[data - 1])
+        .then(callback);
 }
 
 function addItem(data, callback) {
@@ -547,23 +581,22 @@ function calPrice(data) {
 }
 
 const ProductJS = {
-    getProductAPI: function (callback,id) {
-        console.log(shoesAPI)
+    getProductAPI: function (callback, id) {
+        console.log(shoesAPI);
         fetch(shoesAPI)
             .then((response) => response.json())
-            .then(data => callback(data,id));
+            .then((data) => callback(data, id));
     },
     getCartAPI: function (callback) {
         fetch(cartUserAPI)
             .then((response) => response.json())
             .then(callback);
     },
-    renderProductAPI: function (ListOfAPI,id) {
-        
+    renderProductAPI: function (ListOfAPI, id) {
         const html = ListOfAPI[id].page.map((item) => {
             return `
                 <div data-id="${item.id}" class="item-product">
-                    <img src="${item.img}" alt="" class="item-product__img">
+                    <a href="#!"><img src="${item.img}" alt="" class="item-product__img"></a>
                     <div class="item-product__wrap">
                         <h4 class="item-product__heading">
                             ${item.name}
@@ -598,11 +631,11 @@ const ProductJS = {
         posIconCart.innerHTML = htmls;
         IconCart.appendChild(posIconCart);
     },
-    renderIconQuantityCartForPages: function(){
+    renderIconQuantityCartForPages: function () {
         this.getCartAPI(this.renderIconQuantityCart);
     },
-    start: function (id) {   
-        this.getProductAPI(this.renderProductAPI,id)
+    start: function (id) {
+        this.getProductAPI(this.renderProductAPI, id);
         this.getCartAPI(this.renderIconQuantityCart);
     },
 };
@@ -671,7 +704,7 @@ const CartPageJS = {
       `;
         }
     },
-    
+
     start: function (id) {
         this.getCartAPI(this.renderCart);
         this.getCartAPI(this.renderIconQuantityCart);
