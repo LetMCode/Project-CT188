@@ -421,5 +421,42 @@
       ]
     }
   ],
-  "cartUser": []
+  "cartUser": [
+    {
+      "id": "2",
+      "name": "Giày thể thao êm chân kháng thuẩn ",
+      "code": "SKU2400020",
+      "img": "../../assets/images/ProductIMG/img-product_2.jpg",
+      "price": "999.000VND",
+      "size": "40",
+      "author": "Tokyo Life"
+    },
+    {
+      "id": "2",
+      "name": "Giày thể thao êm chân kháng thuẩn ",
+      "code": "SKU2400020",
+      "img": "../../assets/images/ProductIMG/img-product_2.jpg",
+      "price": "999.000VND",
+      "size": "40",
+      "author": "Tokyo Life"
+    },
+    {
+      "id": "2",
+      "name": "Giày thể thao êm chân kháng thuẩn ",
+      "code": "SKU2400020",
+      "img": "../../assets/images/ProductIMG/img-product_2.jpg",
+      "price": "999.000VND",
+      "size": "40",
+      "author": "Tokyo Life"
+    },
+    {
+      "id": "4",
+      "name": "Giày thể thao êm chân siêu nhẹ",
+      "code": "SKU2090064",
+      "img": "../../assets/images/ProductIMG/img-product_4.jpg",
+      "price": "599.000VND",
+      "size": "41",
+      "author": "Tokyo Life"
+    }
+  ]
 }
