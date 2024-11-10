@@ -2154,7 +2154,7 @@ h3 {
     padding: 10px;
     background-color: var(--primary-background-color__form);
     box-shadow: var(--primary-boxShadow__item);
-    color: var(--primary-color__text);
+    color: var(--primary-color__text) !important;
     border: none;
     border-radius: var(--primary-border-radius__input_btn);
     font-size: var(--primary-fontsize-btn__large);
@@ -2162,7 +2162,7 @@ h3 {
 }
 .form-btn:hover {
     opacity: var(--primary-opacity-btn__active);
-    color: var(--primary-color__text);
+    color: var(--primary-color__text__btn);
 }
 
 /* BlogPage */
