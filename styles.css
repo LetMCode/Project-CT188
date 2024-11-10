@@ -8,7 +8,7 @@
     --primary-background-color__form: rgba(255, 255, 255, 0.519);
     --primary-color__text: #111821;
     --primary-color__text__heading: #111821;
-    --primary-color__text-while: #FFf;
+    --primary-color__text-while: #fff;
     --primary-color__navbar: #fff;
     --primary-color__text__footer: #aba8ac;
     --primary-color__btn: #000;
@@ -74,9 +74,6 @@ main {
 
 /* commonStyle */
 
-.hidden {
-    display: none;
-}
 
 strong {
     color: var(--primary-color__strong);
@@ -118,7 +115,6 @@ strong {
 .loading.inner {
     position: absolute;
 }
-
 
 @keyframes spinner {
     from {
@@ -614,7 +610,7 @@ footer * {
 
 h3.title-sp {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 
 h3.title-sp a {
@@ -2347,7 +2343,6 @@ h3 {
     gap: 20px;
 }
 
-
 .blog__tieude {
     justify-items: center;
     font-size: 1.7rem;
@@ -2455,226 +2450,14 @@ h3 {
     color: var(--primary-color__text);
     text-align: justify;
 }
-@media (max-width: 1024px) {
-    .grid-blog__container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media (min-width: 1200px) {
-    .item-page__action:hover .item-page__action-wrap {
-        display: flex;
-    }
-    /* Sign up-in */
-    .m1 {
-        margin: 5px 20% auto;
-        grid-template-areas: "cotnd cotform";
-    }
-    .m2 {
-        margin: 5px 20% auto;
-        grid-template-areas: "cotform cotnd";
-    }
-    .m3 {
-        margin: 5px 35% auto;
-        grid-template-areas: "cotform";
-    }
-    .cot-form {
-        margin-bottom: 150px;
-    }
-    .cot-nd {
-        display: auto;
-    }
-}
-
-/* Medium devices  */
-@media (min-width: 576px) and (max-width: 1199.98px) {
-    html {
-        font-size: 55%;
-    }
-    .item-page {
-        padding: 10px 0;
-    }
-
-    /* HomePage */
-    #home {
-        .service {
-            display: none;
-        }
-        .control-btn {
-            font-size: 3rem;
-            font-weight: var(--primary-font-weight__bold);
-        }
-        .bosuutap {
-            .col-3 {
-                display: none;
-            }
-            .col-9 {
-                width: 100%;
-            }
-        }
-        .store {
-            margin-top: 5rem;
-        }
-        .about {
-            padding: 0;
-            margin: 0;
-            .row {
-                margin-left: 1.5rem;
-            }
-        }
-
-        .sanpham {
-            .container1 {
-                margin-left: -0.5rem;
-            }
-        }
-        .color-dot {
-            width: 15px;
-            height: 15px;
-        }
-        .danhgia {
-            .container {
-                width: 100vw;
-                margin: 0;
-                .row {
-                    width: 95vw;
-                    margin-left: 1.5rem;
-                }
-            }
-        }
-        .blog {
-            margin-top: 6rem;
-            padding: 0;
-        }
-    }
-
-    /* IntroPage */
-    #intro {
-        .text-camhung {
-            margin-left: 10px;
-            padding: 0;
-        }
-        .row {
-            width: 100%;
-        }
-        #sumenh {
-            .dausumenh {
-                margin: 10px;
-            }
-            .container1 {
-                .dausumenh {
-                    margin: 5px 5px 0 2.5rem;
-                }
-            }
-        }
-        #thu {
-            .col-3 {
-                display: none;
-            }
-            .col-9 {
-                display: block;
-                margin: auto;
-                margin-left: 2rem;
-            }
-            .box-bst-intro {
-                padding: 5px;
-                margin-left: 5rem;
-            }
-        }
-    }
-
-    /* PoliciesPage */
-    #cs {
-        .anh.cs {
-            display: none;
-        }
-        #uudai {
-            .row {
-                width: 100%;
-            }
-        }
-        #doitra {
-            .row {
-                width: 100%;
-                margin: 0;
-            }
-        }
-    }
-    .blog-wrap__content {
-        flex-direction: column;
-    }
-
-    /* BlogPage */
-    .blog__left,
-    .blog__right {
-        width: 100%;
-    }
-
-    .blog__center {
-        width: 100%;
-    }
-    /* ProductPage */
-    .list-item {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .list-page__product {
-        padding: 15px 0 60px;
-    }
-    .item-product__other-btn {
-        padding: 20px;
-    }
-    .item-product__img {
-        max-height: 215px;
-    }
-    .page-node__product {
-        padding: 20px;
-        margin: 10px;
-    }
-
-    /* CartPage */
-    .item-cart__info {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Sign up-in */
-    .m1 {
-        margin: 5px 10% auto;
-        grid-template-areas: "cotnd cotform";
-    }
-    .m2 {
-        margin: 5px 10% auto;
-        grid-template-areas: "cotform cotnd";
-    }
-    .m3 {
-        margin: 5px 20% auto;
-        grid-template-areas: "cotform";
-    }
-    .cot-form {
-        margin-bottom: 150px;
-    }
-    .cot-nd {
-        display: 150px;
-    }
-
-    footer {
-        bottom: -380px;
-    }
-}
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    footer {
-        bottom: -318px;
-    }
-}
 
 /*  X-Small devices*/
+/*  */
 @media (max-width: 575.98px) {
     html {
         font-size: 65%;
-        overflow-x:hidden;
-
     }
-    header {
+    .header-fragment {
         width: 100vw;
     }
     .header-wrap {
@@ -2693,6 +2476,8 @@ h3 {
         gap: 20px;
         display: none;
     }
+
+    
     .list-pages__active {
         display: flex;
         flex-direction: column;
@@ -2730,297 +2515,34 @@ h3 {
     }
 
     /* HomePage */
-    #home {
-        .sanpham {
-            display: none;
-        }
-        .control-btn {
-            font-size: 3rem;
-            font-weight: var(--primary-font-weight__bold);
-        }
-        .bosuutap {
-            display: none;
-        }
-        .service {
-            display: none;
-        }
-        .box-slider {
-            .container {
-                padding: 0;
-                margin: 0;
-                .row {
-                    width: 100vw;
-                }
-            }
-            .c4 {
-                display: none;
-            }
-            .c6 {
-                width: col-6;
-                width: 50vw;
-            }
-        }
-        .sp2 {
-            margin-top: 20rem;
-        }
-        .about {
-            .col-3 {
-                display: none;
-            }
-            .col-6 {
-                width: col-12;
-                width: 100%;
-            }
-        }
-        .bosuutap {
-            .gift {
-                display: none;
-            }
-            .col-9 {
-                .bst-content {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    .item-info {
-                        text-align: justify;
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        .thuonghieu {
-            margin-top: 3rem;
-            .row {
-                display: flex;
-                flex-wrap: wrap;
-                margin-left: 1px;
-                .size-img {
-                    display: flex;
-                    width: 50%;
-                }
-            }
-        }
-        .danhgia {
-            background-image: none;
-            h2,
-            .user a,
-            .peo-content span {
-                color: var(--primary-color__text);
-            }
-            .row {
-                display: flex;
-                flex-direction: column;
-            }
-            .col-4 {
-                width: 95vw;
-            }
-        }
-        .blog {
-            margin-top: 55rem;
-            margin-bottom: 20rem;
-            .container1 {
-                margin: 0;
-                padding: 0;
-                width: 100vw;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-            }
-
-            .blog-box {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                img {
-                    width: 35%;
-                    height: auto;
-                    object-fit: cover;
-                }
-            }
-        }
-        .store {
-            display: none;
-        }
+    .danhgia{
+        display: none;
     }
-
+    .hidden{
+        display: none;
+    }
+    .service{
+        display: none;
+    }
+    .bosuutap{
+        display: none;
+    }
     /* IntroPage */
-    #intro {
-        #thu {
-            display: none;
-        }
-        .box-slider.intro {
-            .introb {
-                display: none;
-            }
-            .introa {
-                width: col-6;
-                width: 50vw;
-            }
-        }
-        #camhung {
-            .container1 {
-                display: flex;
-                flex-direction: column;
-                .row {
-                    width: 100%;
-                    display: flex;
-                    .anh img {
-                        width: 100%;
-                        border: none;
-                        box-shadow: none;
-                        margin-left: 1.5rem;
-                    }
-                }
-                .col-8 .row {
-                    width: 100vw;
-                    .text-camhung {
-                        margin-left: 4.5rem;
-                    }
-                }
-            }
-        }
-        #sumenh {
-            .dausumenh {
-                margin: 1rem;
-                width: 90%;
-            }
-            .container1 {
-                display: flex;
-                flex-direction: column;
-                .row {
-                    display: flex;
-                    width: 100vw;
-                }
-            }
-        }
-        #thu {
-            .container1 {
-                display: flex;
-                flex-direction: column;
-                .row {
-                    display: flex;
-                    width: 100vw;
-                    margin: 0;
-                    margin-bottom: 3rem;
-                    .box-bst-intro {
-                        margin: 0;
-                        padding: 0;
-                        width: 100%;
-                    }
-                }
-            }
-            .col-9 {
-                margin: 0;
-            }
-        }
-        #phattrien {
-            .timeline::before {
-                display: none;
-            }
-            .timeline-item::before {
-                display: none;
-            }
-            .timeline-item::after {
-                display: none;
-            }
-            .timeline-item {
-                width: 100%;
-            }
-            .timeline-item:nth-child(even) {
-                display: none;
-            }
-        }
-        #hoatdong {
-            .anhhoatdong {
-                display: none;
-            }
-            .text-hoatdong {
-                width: 100%;
-                margin: 0;
-            }
-            .container1 {
-                display: flex;
-                flex-direction: column;
-            }
-        }
+
+    .canbo{
+        display: none;
+    }
+    .timeline{
+        display: none;
+    }
+    .anhhoatdong{
+        display: none;
     }
 
     /* Policies */
-    #cs {
-        .anh.cs {
-            display: none;
-        }
-        .box-slider {
-            display: none;
-        }
-        #uudai {
-            .container1 {
-                display: flex;
-                flex-direction: column;
-                .row {
-                    display: flex;
-                    margin-left: 1px;
-                    .anh img {
-                        border: none;
-                        box-shadow: none;
-                        margin-left: 1.5rem;
-                    }
-                }
-                .col-8 .row {
-                    width: 100vw;
-                    .text-camhung {
-                        margin-left: 4.5rem;
-                    }
-                }
-            }
-            .dausumenh.cs {
-                margin-left: 10px;
-            }
-        }
-        #muahang {
-            .timeline::before {
-                display: none;
-            }
-            .timeline-item::before {
-                display: none;
-            }
-            .timeline-item::after {
-                display: none;
-            }
-            .timeline-item {
-                width: 100%;
-            }
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-        }
-
-        #baohanh,
-        #vanchuyen {
-            .container {
-                .text-baohanh {
-                    margin: 10px;
-                }
-            }
-        }
-        #hoatdong {
-            .container1 {
-                display: flex;
-                flex-direction: column;
-                .anhhoatdong {
-                    display: none;
-                }
-                .text-hoatdong {
-                    width: 100%;
-                    margin: 0;
-                }
-            }
-            .dausumenh.cs {
-                width: 87vw;
-            }
-        }
+    .anh.cs{
+        display: none;
     }
-
     /* BlogPage */
     .blog-wrap__content {
         flex-direction: column;
@@ -3111,8 +2633,135 @@ h3 {
     .footer {
         display: none;
     }
-    .btn__turn-back{
+    .btn__turn-back {
         right: 20px;
         bottom: 20px;
+    }
+}
+
+/* Medium devices  */
+@media (min-width: 576px) and (max-width: 1199.98px) {
+    html {
+        font-size: 55%;
+    }
+    .item-page {
+        padding: 10px 0;
+    }
+
+    /* Home */
+    .hidden{
+        display: none;
+    }
+    
+
+    /* IntroPage */
+    .canbo{
+        display: none;
+    }
+
+
+    /* PoliciesPage */
+    .anh cs{
+        display: block;
+    }
+
+    .blog-wrap__content {
+        flex-direction: column;
+    }
+
+    /* BlogPage */
+    .service{
+        display: none;
+    }
+    .blog__left,
+    .blog__right {
+        width: 100%;
+    }
+
+    .blog__center {
+        width: 100%;
+    }
+    /* ProductPage */
+    .list-item {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .list-page__product {
+        padding: 15px 0 60px;
+    }
+    .item-product__other-btn {
+        padding: 20px;
+    }
+    .item-product__img {
+        max-height: 215px;
+    }
+    .page-node__product {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    /* CartPage */
+    .item-cart__info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Sign up-in */
+    .m1 {
+        margin: 5px 10% auto;
+        grid-template-areas: "cotnd cotform";
+    }
+    .m2 {
+        margin: 5px 10% auto;
+        grid-template-areas: "cotform cotnd";
+    }
+    .m3 {
+        margin: 5px 20% auto;
+        grid-template-areas: "cotform";
+    }
+    .cot-form {
+        margin-bottom: 150px;
+    }
+    .cot-nd {
+        display: 150px;
+    }
+
+    footer {
+        bottom: -367px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    footer {
+        bottom: -318px;
+    }
+}
+@media (max-width: 1024px) {
+    .grid-blog__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .item-page__action:hover .item-page__action-wrap {
+        display: flex;
+    }
+    /* Sign up-in */
+    .m1 {
+        margin: 5px 20% auto;
+        grid-template-areas: "cotnd cotform";
+    }
+    .m2 {
+        margin: 5px 20% auto;
+        grid-template-areas: "cotform cotnd";
+    }
+    .m3 {
+        margin: 5px 35% auto;
+        grid-template-areas: "cotform";
+    }
+    .cot-form {
+        margin-bottom: 150px;
+    }
+    .cot-nd {
+        display: auto;
     }
 }
