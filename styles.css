@@ -2043,28 +2043,6 @@ textarea .input-contact {
     display: grid;
 }
 
-/* --------giao dien may tinh > 1000px ------------- */
-@media screen and (min-width: 1000px) {
-    .m1 {
-        margin: 5px 20% auto;
-        grid-template-areas: "cotnd cotform";
-    }
-    .m2 {
-        margin: 5px 20% auto;
-        grid-template-areas: "cotform cotnd";
-    }
-    .m3 {
-        margin: 5px 35% auto;
-        grid-template-areas: "cotform";
-    }
-    .cot-form {
-        margin-bottom: 150px;
-    }
-    .cot-nd {
-        display: auto;
-    }
-}
-
 /* ------------------------ */
 .Sign {
     text-align: center;
@@ -2372,11 +2350,6 @@ h3 {
     gap: 20px;
 }
 
-@media (max-width: 1024px) {
-    .grid-blog__container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
 
 .blog__tieude {
     justify-items: center;
@@ -2485,10 +2458,35 @@ h3 {
     color: var(--primary-color__text);
     text-align: justify;
 }
+@media (max-width: 1024px) {
+    .grid-blog__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
 @media (min-width: 1200px) {
     .item-page__action:hover .item-page__action-wrap {
         display: flex;
+    }
+
+    /* Sign up-in */
+    .m1 {
+        margin: 5px 20% auto;
+        grid-template-areas: "cotnd cotform";
+    }
+    .m2 {
+        margin: 5px 20% auto;
+        grid-template-areas: "cotform cotnd";
+    }
+    .m3 {
+        margin: 5px 35% auto;
+        grid-template-areas: "cotform";
+    }
+    .cot-form {
+        margin-bottom: 150px;
+    }
+    .cot-nd {
+        display: auto;
     }
 }
 
