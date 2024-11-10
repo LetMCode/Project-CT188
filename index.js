@@ -111,8 +111,8 @@ const handleFooter = {
                 <ul class="list-footer">
                     <li class="item-footer item-footer__left">
                         <span>
-                            Hotline:0912528877<br/>
-                            9:00-18:00, Thứ Hai đến Thứ Sáu<br/>
+                            Hotline: 0912528877<br/>
+                            9:00 - 18:00, Thứ Hai đến Thứ Sáu<br/>
                             ballance&gara@gmail.com
                         </span>
                         <span>
@@ -128,11 +128,11 @@ const handleFooter = {
                         <div class="item-footer__center-content">
                             <label class="item-footer__center-label">Sản phẩm</label>
                             <ul>
-                                <a href="../Product/index.html" class="">Bộ sưu tập 2024</a>
-                                <a href="../Product/index.html" class="">Bộ sưu tập Signature</a>
-                                <a href="../Product/index.html" class="">Sản phẩm nổi bật</a>
-                                <a href="../Product/index.html" class="">Sản phẩm bán chạy</a>
-                                <a href="../Product/index.html" class="">Sản phẩm khuyến mãi</a>
+                                <li><a href="../Product/index.html" class="">Sản Phẩm mới</a></li>
+                                <li><a href="../Product/index.html" class="">Sản phẩm nổi bật</a></li>
+                                <li><a href="../Product/index.html" class="">Bộ sưu tập Air Force One</a></li>
+                                <li><a href="../Product/index.html" class="">Thương hiệu nổi bật</a></li>
+                                <li><a href="../Product/index.html" class="">Sản phẩm khuyến mãi</a></li>
                             </ul>
                         </div>
                         <div class="item-footer__center-content">
@@ -148,7 +148,7 @@ const handleFooter = {
                     <li class="item-footer">
                         <p class="item-footer__desc">
                             Hợp tác doanh nghiệp<br/>
-                            CÔNG TY TNHH Ballance & Gara<br/>
+                            CÔNG TY TNHH Balance & Gara<br/>
                             Khu II, Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều,<br/>
                             Thành phố  Cần Thơ, Việt Nam<br/>
                             MST: 0317645769<br/>
@@ -472,7 +472,24 @@ Validator.isConfirm = function (selector, getconfirm, message) {
     };
 };
 //----------------//
+//Contact
+const ContactJS = {
+    checkFormContact: function () {
+        const mainmodal = document.querySelector(".main-modal");
+        const closeBtn= document.querySelector(".btn button");
+        mainmodal.classList.add("active");
+        mainmodal.style.opacity = "1";
 
+        closeBtn.addEventListener("click", () => {
+            mainmodal.style.opacity = "0";
+            setTimeout(() => {
+                mainmodal.classList.remove("contact-active");
+            }, 300);
+        });
+    },
+};
+
+// ---------------//
 // ProductPage & CartPage
 
 function getItem(id, data, callback) {
@@ -503,10 +520,10 @@ function addItem(data, callback) {
         .then(function (response) {
             return response.json();
         })
-        .then( (data) =>{
-            console.log("Add Item",data)
+        .then((data) => {
+            console.log("Add Item", data);
             toastMessage();
-            ProductJS.getCartAPI(ProductJS.renderIconQuantityCart)
+            ProductJS.getCartAPI(ProductJS.renderIconQuantityCart);
         })
         .then(callback);
 }
@@ -521,33 +538,29 @@ function DeleteItem(data, callback) {
         .then(function (response) {
             return response.json();
         })
-        .then(data => {
-            console.log("Delete: ",data)
+        .then((data) => {
+            console.log("Delete: ", data);
             CartPageJS.start();
         })
         .then(callback);
 }
 function handleOther(data) {
-    
     addItem(data);
 }
 
 function debounce(func, delay) {
     let timer;
-    return function(...args) {
-      clearTimeout(timer);
-      timer = setTimeout(() => func.apply(this, args), delay);
+    return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => func.apply(this, args), delay);
     };
-  }
+}
 function handleDeleteItem(data) {
     // DeleteItem(data.id);
     debounce(DeleteItem(data.id), 300);
-    
 }
 
-  
-  // Sử dụng debounce cho thao tác xóa để tránh gửi quá nhiều yêu cầu
-
+// Sử dụng debounce cho thao tác xóa để tránh gửi quá nhiều yêu cầu
 
 function toastMessage() {
     const contentToastMsg = document.querySelector(".toastMsg");
@@ -603,7 +616,7 @@ function calPrice(data) {
 
 const ProductJS = {
     getProductAPI: function (callback, id) {
-        console.log(shoesAPI)
+        console.log(shoesAPI);
         fetch(shoesAPI)
             .then((response) => response.json())
             .then((data) => callback(data, id));
@@ -636,7 +649,7 @@ const ProductJS = {
                         </p>
                     </div>
                     <button onclick ="getItem(${id},${item.id},handleOther)" class="item-product__other-btn">
-                        Other
+                        Đặt Hàng
                     </button>
                 </div>
                 `;
@@ -713,7 +726,7 @@ const CartPageJS = {
                 <p class="item-cart__size">Size: ${item.size}</p>
                 <p class="item-cart__price">${item.price}</p>
             </div>
-            <button onclick="getItem(0,${item.id},handleDeleteItem)" class="btn-delete__cart" >&times Delete</button>
+            <button onclick="getItem(0,${item.id},handleDeleteItem)" class="btn-delete__cart" >&times</button>
           </div>
           `;
             });

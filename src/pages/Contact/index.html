@@ -28,6 +28,12 @@
                      <div class="col-md-12 contact-header">
                          <div class="bg-contact">
                              <h1 class="contact__heading">Liên hệ</h1>
+                             <div class="line">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                
+                            </div>
                              <p class="p-bottom">Chúng tôi rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho
                                  chúng tôi nhé.<br> Yêu cầu của bạn sẽ được xử lý và phản hồi trong thời gian sớm nhất.
                                  <br>Hoặc bạn chỉ cần nhắt điện thoại lên và gọi cho cúng tôi.</p>
@@ -131,11 +137,26 @@
                 </div>
         </main>
     </main>
+    <section>
+        <div class="main-modal ">
+            <div class="overlay"></div>
+            <div class="modal">
+                <div class="icon" >
+                    <i class="fa-regular fa-circle-check"></i>
+                </div>
+                <h3 class="contact-modal">Đã gửi</h3>
+                <p>Cảm ơn bạn đã liên hệ.<br>Chúng tôi sẽ cố gắng trả lời trong vòng 24 giờ.</p>
+                <div class="btn" >
+                    <button type="button">OK</button>
+                </div>
+            </div>
+        </section>
     <script src="../../../index.js"></script>
     <script>
         handleHeader.start()
         handleFooter.renderFooter()
         ProductJS.renderIconQuantityCartForPages()
+        
         Validator({
             form: '#form-4',
             errorSelector: '.form-message',
@@ -149,7 +170,7 @@
                 Validator.minLength('#areaText',1,"Vui lòng nhập nội dung")
             ],
             onSubmit: function (data) {
-                console.log(data);
+                ContactJS.checkFormContact()
             }
         });
     </script>

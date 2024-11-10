@@ -74,7 +74,7 @@ main {
 
 /* commonStyle */
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -1324,7 +1324,6 @@ a.btn-home:hover {
 
 /* Policies */
 
-
 .anh.cs img {
     border-bottom: 5px solid rgb(144, 144, 144);
     border-right: 5px solid rgb(144, 144, 144);
@@ -1615,9 +1614,10 @@ a.btn-home:hover {
 
 .btn-delete__cart {
     padding: 10px;
+    font-size: var(--primary-fontsize-icon);
     cursor: pointer;
-    background-color: var(--primary-color__btn);
-    color: var(--primary-color__text-while);
+    background-color: var(--primary-background-color__item);
+    color: var(--primary-color__text);
 }
 .btn-delete__cart:active {
     opacity: var(--primary-opacity-btn__active);
@@ -1702,14 +1702,6 @@ a.btn-home:hover {
 .contact-wrap__heading {
     background-image: url(./src/assets/images/Sign/hinhnen1.jpg);
     position: relative;
-}
-.contact__heading::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 4px;
-    margin-top: 15px;
-    background: var(--primary-color__stick-after);
 }
 
 .input-contact {
@@ -1832,6 +1824,161 @@ textarea .input-contact {
     padding-left: 30px;
 }
 
+.main-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    
+  }
+  
+  .main-modal.active{
+    visibility: visible;
+  }
+  
+  .main-modal .overlay{
+    background: rgba(0 ,0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+  }
+  .main-modal .modal{
+    height: 300px;
+    min-width: 400px;
+    
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px ;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0 ,0, 0, 0.5);
+    
+  }
+  
+  .modal .icon{
+    padding: 5px;
+  
+  }
+  .modal .icon i{
+    margin-left: 10px;
+  
+    font-size: 50px;
+    color: #2ac70e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+  
+  .modal .contact-modal{
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  
+  }
+  .modal p{
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .modal .btn{
+    width: 100%;
+  }
+  .modal .btn button{
+    width: 50%;
+    padding: 8px;
+    border: none;
+    background-color: #2ac70e;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+  }
+  .modal .btn button:hover{
+    background-color: #2ac70ecb;
+  
+  }
+/*PHẦN CHỈNH SỬA THÊM ------------------------------------------------------------------------------------------------------------------*/
+.line div {
+    margin: 0 0.2rem;
+}
+
+.line div:nth-child(1),
+.line div:nth-child(3) {
+    height: 2px;
+    width: 70px;
+    background-color: var(--primary-color__stick-after);
+    border-radius: var(--primary-border-radius__item);
+}
+
+.line {
+    display: flex;
+    align-items: center;
+}
+.line div:nth-child(2) {
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary-color__stick-after);
+    border-radius: 50%;
+}
+
+.message {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+}
+.message .success {
+    color: green;
+    font-size: 16px;
+    animation: button 0.3s linear;
+    position: absolute;
+    display: none;
+}
+.message .danger {
+    color: red;
+    font-size: 16px;
+    animation: button 0.3s linear;
+    transition: 0.3s;
+    position: absolute;
+    display: none;
+}
+
+@keyframes buttons {
+    0% {
+        transform: scale(0.1);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------*/
+
 /* Sign up-in */
 .form-body {
     background-image: url("./src/assets/images/Sign/hinhnen6.jpg");
@@ -1858,28 +2005,26 @@ textarea .input-contact {
     display: grid;
 }
 
-
 /* --------giao dien may tinh > 1000px ------------- */
 @media screen and (min-width: 1000px) {
-    
-.m1 {
-    margin: 5px 20% auto;
-    grid-template-areas: "cotnd cotform";
-}
-.m2 {
-    margin: 5px 20% auto;
-    grid-template-areas: "cotform cotnd";
-}
-.m3 {
-    margin: 5px 35% auto;
-    grid-template-areas: "cotform";
-}
-.cot-form {
-    margin-bottom: 150px;
-}
-.cot-nd {
-    display: auto;
-}
+    .m1 {
+        margin: 5px 20% auto;
+        grid-template-areas: "cotnd cotform";
+    }
+    .m2 {
+        margin: 5px 20% auto;
+        grid-template-areas: "cotform cotnd";
+    }
+    .m3 {
+        margin: 5px 35% auto;
+        grid-template-areas: "cotform";
+    }
+    .cot-form {
+        margin-bottom: 150px;
+    }
+    .cot-nd {
+        display: auto;
+    }
 }
 
 /* ------------------------ */
@@ -2076,7 +2221,6 @@ h3 {
     margin: 10px;
     box-sizing: border-box;
 }
-
 
 .blog__content {
     padding: 10px;
@@ -2304,15 +2448,11 @@ h3 {
     text-align: justify;
 }
 
-
-@media  (min-width: 1200px){
+@media (min-width: 1200px) {
     .item-page__action:hover .item-page__action-wrap {
         display: flex;
     }
-    
 }
-
-
 
 /* Medium devices  */
 @media (min-width: 576px) and (max-width: 1199.98px) {
@@ -2325,10 +2465,10 @@ h3 {
 
     /* HomePage */
     #home {
-        .service{
+        .service {
             display: none;
         }
-        .control-btn{
+        .control-btn {
             font-size: 3rem;
             font-weight: var(--primary-font-weight__bold);
         }
@@ -2347,7 +2487,6 @@ h3 {
             padding: 0;
             margin: 0;
             .row {
-
                 margin-left: 1.5rem;
             }
         }
@@ -2386,8 +2525,6 @@ h3 {
         .row {
             width: 100%;
         }
-        .box-slider.intro {
-        }
         #sumenh {
             .dausumenh {
                 margin: 10px;
@@ -2416,7 +2553,7 @@ h3 {
 
     /* PoliciesPage */
     #cs {
-        .anh.cs{
+        .anh.cs {
             display: none;
         }
         #uudai {
@@ -2429,7 +2566,7 @@ h3 {
                 width: 100%;
                 margin: 0;
             }
-    }
+        }
     }
     .blog-wrap__content {
         flex-direction: column;
@@ -2488,13 +2625,12 @@ h3 {
         display: 150px;
     }
 
-    footer{
+    footer {
         bottom: -380px;
-
     }
 }
-@media (min-width: 992px) and (max-width: 1199.98px){
-    footer{
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    footer {
         bottom: -318px;
     }
 }
@@ -2656,8 +2792,7 @@ h3 {
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
-            .col-3 {
-            }
+
             .blog-box {
                 width: 100%;
                 display: flex;
@@ -2676,7 +2811,7 @@ h3 {
 
     /* IntroPage */
     #intro {
-        #thu{
+        #thu {
             display: none;
         }
         .box-slider.intro {
@@ -2778,7 +2913,7 @@ h3 {
 
     /* Policies */
     #cs {
-        .anh.cs{
+        .anh.cs {
             display: none;
         }
         .box-slider {
@@ -2825,8 +2960,7 @@ h3 {
                 left: 0;
             }
         }
-        #doitra {
-        }
+
         #baohanh,
         #vanchuyen {
             .container {
@@ -2854,14 +2988,13 @@ h3 {
     }
 
     /* BlogPage */
-    .blog-wrap__content{
+    .blog-wrap__content {
         flex-direction: column;
     }
     .blog__left,
     .blog__center,
     .blog__right {
         padding: 10px;
-
     }
 
     /* ContactPage */
