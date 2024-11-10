@@ -119,12 +119,7 @@ strong {
     position: absolute;
 }
 
-.box {
-    background-color: #ccc;
-    width: 200px;
-    height: 200px;
-    position: relative;
-}
+
 @keyframes spinner {
     from {
         rotate: 0;

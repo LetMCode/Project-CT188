@@ -400,7 +400,7 @@ const handleHeader = {
                     </a>
                     <ul class="list-pages ">
                         <li class="item-page item-page__home">
-                            <a href="../../../index.html" class="item-label">Home</a>
+                            <a href="../../../index.html" class="item-label">Trang Chủ</a>
                         </li>
                         <li class="item-page">
                             <a href="../Intro/index.html" class="item-label">Giới thiệu</a>
@@ -480,7 +480,7 @@ const handleFooter = {
                         <span>
                             Hotline: 0912528877<br/>
                             9:00 - 21:30, (T2-T7)<br/>
-                            Email: ballance&gara@gmail.com
+                            Email: balance&gara@gmail.com
                         </span>
                         <span>
                             <a href="#!">
