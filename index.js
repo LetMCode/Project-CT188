@@ -10,8 +10,13 @@ var posIconCart = document.createElement("span");
 var list = document.querySelector(".list-item");
 var toastMsg = document.querySelector(".toastMsg-wrap");
 var totalSlides = slideImages.length;
-var shoesAPI = "http://localhost:3000/product";
-var cartUserAPI = "http://localhost:3000/cartUser";
+// Host API
+var shoesAPI = "https://hostapi-g350.onrender.com/api/product";
+var cartUserAPI = "https://hostapi-g350.onrender.com/api/cartUser";
+
+// Host Local
+// var shoesAPI = "http://localhost:3000/product";
+// var cartUserAPI = "http://localhost:3000/cartUser";
 
 let currentIndex = 0;
 
@@ -42,6 +47,9 @@ const handleHeader = {
                         <li class="item-page">
                             <a href="../Contact/index.html" class="item-label">Liên hệ</a>
                         </li>
+                        <li class="item-page item-page__policies">
+                            <a href="../Policies/index.html" class="item-label">Chính Sách</a>
+                        </li>
                     </ul>
                     <ul class="list-actions">
                         <li class="item-page__action item-page__action-icon">
@@ -71,15 +79,15 @@ const handleHeader = {
     handleEventHeader: function () {
         var btnMenu = document.querySelector(".icon-menu__header");
         var listPage = document.querySelector(".list-pages");
-        var btnIconHeader = document.querySelector(".icon-action__wrap")
-        var wrapSign = document.querySelector(".item-page__action-wrap")
-        btnIconHeader.addEventListener("click",() =>{
-            if(wrapSign.classList.contains("icon-action__wrap__active")){
-                wrapSign.classList.remove("icon-action__wrap__active")
-            }else{
-                wrapSign.classList.add("icon-action__wrap__active")
+        var btnIconHeader = document.querySelector(".icon-action__wrap");
+        var wrapSign = document.querySelector(".item-page__action-wrap");
+        btnIconHeader.addEventListener("click", () => {
+            if (wrapSign.classList.contains("icon-action__wrap__active")) {
+                wrapSign.classList.remove("icon-action__wrap__active");
+            } else {
+                wrapSign.classList.add("icon-action__wrap__active");
             }
-        })
+        });
 
         btnMenu.addEventListener("click", () => {
             if (listPage.classList.contains("list-pages__active")) {
@@ -94,11 +102,6 @@ const handleHeader = {
         this.handleEventHeader();
     },
 };
-
-
-function renderBtn() {
-    
-}
 
 const handleFooter = {
     renderFooter: function () {
@@ -206,7 +209,7 @@ const handleFooter = {
         footer.innerHTML = html;
         return body.appendChild(footer);
     },
-    renderBtn:function(){
+    renderBtn: function () {
         const btnTurnBack = document.createElement("div");
         body.setAttribute("id", "body");
         const htmls = `
@@ -217,10 +220,10 @@ const handleFooter = {
         btnTurnBack.innerHTML = htmls;
         return body.appendChild(btnTurnBack);
     },
-    start: function() {
-        this.renderFooter()
+    start: function () {
+        this.renderFooter();
         this.renderBtn();
-    }
+    },
 };
 
 function showSlide(index) {
@@ -493,7 +496,6 @@ function addItem(data, callback) {
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
         },
     };
 
@@ -501,33 +503,52 @@ function addItem(data, callback) {
         .then(function (response) {
             return response.json();
         })
+        .then( (data) =>{
+            console.log("Add Item",data)
+            toastMessage();
+            ProductJS.getCartAPI(ProductJS.renderIconQuantityCart)
+        })
         .then(callback);
 }
 function DeleteItem(data, callback) {
     var options = {
         method: "DELETE",
-        body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
         },
     };
     fetch(cartUserAPI + "/" + data, options)
         .then(function (response) {
             return response.json();
         })
+        .then(data => {
+            console.log("Delete: ",data)
+            CartPageJS.start();
+        })
         .then(callback);
 }
 function handleOther(data) {
-    toastMessage();
+    
     addItem(data);
-    ProductJS.getCartAPI(ProductJS.renderIconQuantityCart);
 }
 
+function debounce(func, delay) {
+    let timer;
+    return function(...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => func.apply(this, args), delay);
+    };
+  }
 function handleDeleteItem(data) {
-    DeleteItem(data.id);
-    CartPageJS.start();
+    // DeleteItem(data.id);
+    debounce(DeleteItem(data.id), 300);
+    
 }
+
+  
+  // Sử dụng debounce cho thao tác xóa để tránh gửi quá nhiều yêu cầu
+
+
 function toastMessage() {
     const contentToastMsg = document.querySelector(".toastMsg");
     const duration = 3000;
@@ -582,7 +603,7 @@ function calPrice(data) {
 
 const ProductJS = {
     getProductAPI: function (callback, id) {
-        console.log(shoesAPI);
+        console.log(shoesAPI)
         fetch(shoesAPI)
             .then((response) => response.json())
             .then((data) => callback(data, id));
@@ -681,7 +702,6 @@ const CartPageJS = {
     },
     renderCart: function (data) {
         var listCart = document.querySelector(".list-item__cart");
-
         if (data.length !== 0) {
             const htmls = data.map((item) => {
                 return `
@@ -705,7 +725,7 @@ const CartPageJS = {
         }
     },
 
-    start: function (id) {
+    start: function () {
         this.getCartAPI(this.renderCart);
         this.getCartAPI(this.renderIconQuantityCart);
         this.getCartAPI(this.renderTotalPrice);

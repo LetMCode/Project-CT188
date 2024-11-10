@@ -16,20 +16,19 @@
     <link rel="manifest" href="../../assets/images/BlogIMG/Favicon/site.webmanifest" />
     <link rel="stylesheet" href="../../assets/GlobalStyles/grid.css">
     <link rel="stylesheet" href="../../../styles.css">
-    <link rel="stylesheet" href="./styles.css">
 </head>
 
 
 <body>
-    <main class="main">
-        <div class="container">
+    <main>
+        <div class="blog__container container">
             <div>
-                <h1 class="h1_1">THIẾT KẾ ĐỘC ĐÁO</h1>
-                <p class="date_1"><i>Đăng ngày: 05/11/2024</i></p>
+                <h1 class="blog__h1_1">THIẾT KẾ ĐỘC ĐÁO</h1>
+                <p class="blog__date_1"><i>Đăng ngày: 05/11/2024</i></p>
             </div>
     
-            <div id="toc">
-                <h3 class="h3">Mục Lục</h3>
+            <div id="blog_toc">
+                <h3 class="blog__h3">Mục Lục</h3>
                 <ul>
                     <li>
                         <a href="#section1">GIÀY THỂ THAO CỔ ĐIỂN “VƯỢT THỜI GIAN”</a>
@@ -46,9 +45,9 @@
                 </ul>
             </div>
     
-            <h2 class="h2" id="section1">GIÀY THỂ THAO CỔ ĐIỂN “VƯỢT THỜI GIAN”</h2>
+            <h2 class="blog__h2" id="section1">GIÀY THỂ THAO CỔ ĐIỂN “VƯỢT THỜI GIAN”</h2>
     
-            <div class="text">
+            <div class="blog__text">
                 Bất kể sự dịch chuyển của dòng chảy thời trang qua bao thập kỷ, những mẫu giày thể thao cổ điển vẫn đủ sức
                 khẳng định vị trí “ưu tiên”
                 của mình trong địa hạt giày dép thời trang. Nhờ thiết kế tối giản cùng độ linh hoạt cao trong đa dạng bản
@@ -57,12 +56,12 @@
                 phê.
             </div>
             <div>
-                <img src="../../assets/images/BlogIMG/d1.jpeg" class="img-content_2">
+                <img src="../../assets/images/BlogIMG/d1.jpeg" class="img_content_2" id="blog_img">
             </div>
     
-            <h2 class="h2" id="section2">SÀNH ĐIỆU VỚI GIÀY THỂ THAO ĐẾ ĐỘN</h2>
+            <h2 class="blog__h2" id="section2">SÀNH ĐIỆU VỚI GIÀY THỂ THAO ĐẾ ĐỘN</h2>
     
-            <div class="text">
+            <div class="blog__text">
                 Đối với các tín đồ thời trang sở hữu vóc dáng khiêm tốn, mẫu giày sneakers đế độn sẽ là giải pháp hoàn hảo
                 nhất mang lại
                 sự thoải mái, trẻ trung và còn giúp “ăn gian” chiều cao một cách đáng kể. Không bất tiện và gò bó đôi chân
@@ -75,12 +74,12 @@
             </div>
     
             <div>
-                <img src="../../assets/images/BlogIMG/d2.jpg" class="img-content_2">
+                <img src="../../assets/images/BlogIMG/d2.jpg" class="img_content_2" id="blog_img">
             </div>
     
-            <h2 class="h2">NĂNG LƯỢNG HỨNG KHỞI TRONG CÁC GAM MÀU NỔI BẬT</h2>
+            <h2 class="blog__h2">NĂNG LƯỢNG HỨNG KHỞI TRONG CÁC GAM MÀU NỔI BẬT</h2>
     
-            <div class="text" id="section3">
+            <div class="blog__text" id="section3">
                 Không chỉ xuất hiện trên các trang phục quần áo, “sân chơi” màu sắc color-blocking tiếp tục đổ bộ vào thế
                 giới sneakers tạo nên
                 “bản giao hưởng” đầy mới mẻ cho không khí làng mốt mùa Thu-Đông năm nay. Nhờ sự giao thoa “có chủ đích” giữa
@@ -91,12 +90,12 @@
                 trong vòng một nốt nhạc.
             </div>
             <div>
-                <img src="../../assets/images/BlogIMG/d3.jpg" class="img-content_2">
+                <img src="../../assets/images/BlogIMG/d3.jpg" class="img_content_2" id="blog_img">
             </div>
     
-            <h2 class="h2">ĐỔI MỚI CÙNG GIÀY THỂ THAO THIẾT KẾ FUTURISTIC</h2>
+            <h2 class="blog__h2">ĐỔI MỚI CÙNG GIÀY THỂ THAO THIẾT KẾ FUTURISTIC</h2>
     
-            <div class="text" id="section4">
+            <div class="blog__text" id="section4">
                 Bên cạnh giày cổ điển, các thiết kế mang “hơi thở” futuristic (vị lai) cũng được đông đảo giới trẻ tích cực
                 đón nhận.
                 Lần lượt được “trình làng” từ các “ông lớn” trong ngành thời trang và bùng nổ khắp các sàn diễn cao cấp điển
@@ -106,14 +105,15 @@
                 nghiệm sự đột phá mới trong phong cách thời trang.
             </div>
             <div>
-                <img src="../../assets/images/BlogIMG/d4.jpg" class="img-content_2">
+                <img src="../../assets/images/BlogIMG/d4.jpg" class="img_content_2" id="blog_img">
             </div>
         </div>
     </main>
     <script src="../../../index.js"></script>
     <script>
-        handleHeader.start()
-        Footer()
+          handleHeader.start()
+        handleFooter.renderFooter()
+        ProductJS.renderIconQuantityCartForPages()
     </script>
 </body>
 
