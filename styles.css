@@ -2468,7 +2468,6 @@ h3 {
     .item-page__action:hover .item-page__action-wrap {
         display: flex;
     }
-
     /* Sign up-in */
     .m1 {
         margin: 5px 20% auto;
@@ -2675,6 +2674,8 @@ h3 {
 @media (max-width: 575.98px) {
     html {
         font-size: 65%;
+        overflow-x:hidden;
+
     }
     header {
         width: 100vw;
@@ -2700,7 +2701,7 @@ h3 {
         flex-direction: column;
         background-color: #fff;
         position: absolute;
-        bottom: -350px;
+        bottom: -360px;
         left: -13px;
         width: 105%;
         border-bottom: var(--primary-border);
@@ -3064,7 +3065,7 @@ h3 {
     .btn-delete__cart {
         height: 80px;
         width: 80px;
-        font-size: var(--primary-fontsize-btn__large);
+        font-size: 4rem;
     }
     .payment-btn__payed {
         padding: 30px;
@@ -3112,5 +3113,9 @@ h3 {
 
     .footer {
         display: none;
+    }
+    .btn__turn-back{
+        right: 20px;
+        bottom: 20px;
     }
 }
