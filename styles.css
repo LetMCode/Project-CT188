@@ -8,7 +8,7 @@
     --primary-background-color__form: rgba(255, 255, 255, 0.519);
     --primary-color__text: #111821;
     --primary-color__text__heading: #111821;
-    --primary-color__text-while: #fff;
+    --primary-color__text-while: #FFf;
     --primary-color__navbar: #fff;
     --primary-color__text__footer: #aba8ac;
     --primary-color__btn: #000;
@@ -578,7 +578,7 @@ footer * {
 }
 
 .text-title h3 {
-    color: var(--primary-color__navbar);
+    color: var(--primary-color__text-while);
     text-transform: uppercase;
 }
 
@@ -621,7 +621,7 @@ h3.title-sp a {
     background-color: var(--primary-color__btn);
     padding: 10px 25px;
     border-radius: var(--primary-border-radius__btn);
-    color: var(--primary-color__navbar);
+    color: var(--primary-color__text-while);
     font-size: var(--primary-fontsize-btn__large);
     text-transform: uppercase;
     display: inline-block;
@@ -666,7 +666,7 @@ h3.title-sp a:hover {
     align-items: center;
 }
 .box-product:hover {
-    background-color: var(--primary-color__navbar);
+    background-color: var(--primary-color__text-while);
     transform: scale(1);
     box-shadow: var(--primary-boxShadow__product);
 }
@@ -991,19 +991,19 @@ ul.nav-menu li a:hover {
 }
 
 .user a {
-    color: var(--primary-color__navbar);
+    color: var(--primary-color__text__btn);
     font-weight: var(--primary-font-weight__bold);
     font-size: var(--primary-fontsize-body);
 }
 
 .user span {
-    color: var(--primary-color__navbar);
+    color: var(--primary-color__text__btn);
     font-weight: var(--primary-font-weight__text);
     font-size: var(--primary-fontsize-body);
 }
 
 .peo-content span {
-    color: var(--primary-color__navbar);
+    color: var(--primary-color__text__btn);
     font-style: italic;
     font-weight: var(--primary-font-weight__text);
 }
@@ -1094,7 +1094,7 @@ ul.nav-menu li a:hover {
 }
 
 .store h3 {
-    color: var(--primary-color__navbar);
+    color: var(--primary-color__text-while);
     margin-bottom: 20px;
 }
 
@@ -1110,7 +1110,7 @@ a.btn-home {
 
 a.btn-home:hover {
     background-color: var(--primary-color__btn-hover);
-    color: var(--primary-color__text-while);
+    color: var(--primary-color__text__btn);
     transition: 0.3s;
     cursor: pointer;
     transform: scale(1.1);
@@ -1647,8 +1647,8 @@ a.btn-home:hover {
 .item-product__other-btn {
     display: block;
     width: 100%;
-    background-color: var(--primary-background-color__footer);
-    color: var(--primary-color__text-while);
+    background-color: var(--primary-color__btn);
+    color: var(--primary-color__text__btn);
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -1748,8 +1748,8 @@ a.btn-home:hover {
     padding: 10px;
     font-size: var(--primary-fontsize-icon);
     cursor: pointer;
-    background-color: var(--primary-background-color__item);
-    color: var(--primary-color__text);
+    background-color: transparent;
+    color: #000;
 }
 .btn-delete__cart:active {
     opacity: var(--primary-opacity-btn__active);
@@ -1814,7 +1814,7 @@ a.btn-home:hover {
     width: 100%;
     padding: 15px;
     font-size: var(--primary-fontsize-btn__large);
-    color: var(--primary-color__text-while);
+    color: var(--primary-color__text__btn);
     font-weight: var(--primary-font-weight__bold);
     background-color: var(--primary-color__btn);
     text-transform: uppercase;
@@ -1871,11 +1871,13 @@ textarea .input-contact {
     height: 40px;
     width: 120px;
     color: #fff;
-    background-color: #000;
+    background-color: #ffa45d;
     border-radius: 10px;
     padding: 10px;
-
     display: flex;
+    background-color: var(--primary-color__btn);
+    border-radius: var(--primary-border-radius__btn);
+    cursor: pointer;
 }
 
 .details-infor {
@@ -1940,11 +1942,6 @@ textarea .input-contact {
     padding: 2px;
     margin-top: 25px;
     display: flex;
-}
-.btn-contact {
-    cursor: pointer;
-    background-color: var(--primary-color__btn);
-    border-radius: var(--primary-border-radius__btn);
 }
 .btn-contact:active {
     opacity: var(--primary-opacity-btn__active);
@@ -2082,7 +2079,7 @@ h3 {
 
 /* ---------quen mk, icon-------- */
 .form-icon {
-    color: #ffa45d;
+    color: var(--primary-color__btn);
 }
 .ic-facebook:hover {
     color: blue;
@@ -2144,8 +2141,8 @@ h3 {
     margin-top: 3px;
     width: 100%;
     padding: 10px;
-    background-color: #ffcdac;
-    color: #5d5e59;
+    background-color: var(--primary-color__btn);
+    color: var(--primary-color__text__btn);
     border: none;
     border-radius: var(--primary-border-radius__input_btn);
     cursor: pointer;
@@ -2157,15 +2154,15 @@ h3 {
     padding: 10px;
     background-color: var(--primary-background-color__form);
     box-shadow: var(--primary-boxShadow__item);
-    color: #5d5e59;
+    color: var(--primary-color__text);
     border: none;
     border-radius: var(--primary-border-radius__input_btn);
     font-size: var(--primary-fontsize-btn__large);
     cursor: pointer;
 }
 .form-btn:hover {
-    background-color: #ffa45d;
-    color: var(--primary-color__btn);
+    opacity: var(--primary-opacity-btn__active);
+    color: var(--primary-color__text);
 }
 
 /* BlogPage */
