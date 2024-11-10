@@ -63,7 +63,7 @@ html {
 body {
     font-family: "Roboto", sans-serif;
     font-size: var(--primary-fontsize-body);
-    /* min-height: 100vh; */
+    min-height: 100vh;
     position: relative;
 }
 
@@ -82,6 +82,144 @@ strong {
     color: var(--primary-color__strong);
 }
 
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 50px;
+    height: 50px;
+}
+
+.loading::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 5px solid;
+    border-radius: 50%;
+    border-color: #000 transparent;
+
+    animation-name: spinner;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.loading[data-text]::after {
+    content: attr(data-text);
+    font-size: 14px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    translate: -50%;
+    white-space: nowrap;
+}
+
+.loading.inner {
+    position: absolute;
+}
+
+.box {
+    background-color: #ccc;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+@keyframes spinner {
+    from {
+        rotate: 0;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+.main-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.main-modal.active {
+    visibility: visible;
+}
+
+.main-modal .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.main-modal .modal {
+    height: 300px;
+    min-width: 400px;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal .icon {
+    padding: 5px;
+}
+.modal .icon i {
+    margin-left: 10px;
+
+    font-size: 50px;
+    color: #2ac70e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal .contact-modal {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.modal p {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+.modal .btn {
+    width: 100%;
+}
+.modal .btn button {
+    width: 50%;
+    padding: 8px;
+    border: none;
+    background-color: #2ac70e;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.modal .btn button:hover {
+    background-color: #2ac70ecb;
+}
 /* End commonStyle */
 
 /* Header */
@@ -1071,7 +1209,6 @@ a.btn-home:hover {
 .tieude p {
     font-size: 40px;
     margin-bottom: 20px;
-    font-family: "Lobster", cursive;
     text-align: center;
     color: #ff9500;
     text-shadow: 0 1px 0 #ff9d14, 0 2px 0 #fb970c, 0 3px 0 #ffaf3f,
@@ -1824,100 +1961,6 @@ textarea .input-contact {
     padding-left: 30px;
 }
 
-.main-modal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    
-  }
-  
-  .main-modal.active{
-    visibility: visible;
-  }
-  
-  .main-modal .overlay{
-    background: rgba(0 ,0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  
-  }
-  .main-modal .modal{
-    height: 300px;
-    min-width: 400px;
-    
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-direction: column;
-    text-align: center;
-    padding: 30px ;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0 ,0, 0, 0.5);
-    
-  }
-  
-  .modal .icon{
-    padding: 5px;
-  
-  }
-  .modal .icon i{
-    margin-left: 10px;
-  
-    font-size: 50px;
-    color: #2ac70e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
-  }
-  
-  .modal .contact-modal{
-    font-size: 35px;
-    font-weight: 500;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-  
-  }
-  .modal p{
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-  }
-  .modal .btn{
-    width: 100%;
-  }
-  .modal .btn button{
-    width: 50%;
-    padding: 8px;
-    border: none;
-    background-color: #2ac70e;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    
-  }
-  .modal .btn button:hover{
-    background-color: #2ac70ecb;
-  
-  }
 /*PHẦN CHỈNH SỬA THÊM ------------------------------------------------------------------------------------------------------------------*/
 .line div {
     margin: 0 0.2rem;

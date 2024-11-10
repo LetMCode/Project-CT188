@@ -8,221 +8,47 @@ var prevBtn = document.getElementById("prevBtn");
 var nextBtn = document.getElementById("nextBtn");
 var posIconCart = document.createElement("span");
 var list = document.querySelector(".list-item");
+var listCart = document.querySelector(".list-item__cart");
+
 var toastMsg = document.querySelector(".toastMsg-wrap");
 var totalSlides = slideImages.length;
 // Host API
-var shoesAPI = "https://hostapi-g350.onrender.com/api/product";
-var cartUserAPI = "https://hostapi-g350.onrender.com/api/cartUser";
+var shoesAPI;
+var cartUserAPI;
+shoesAPI = "https://hostapi-g350.onrender.com/api/product";
+cartUserAPI = "https://hostapi-g350.onrender.com/api/cartUser";
 
 // Host Local
-// var shoesAPI = "http://localhost:3000/product";
-// var cartUserAPI = "http://localhost:3000/cartUser";
+// shoesAPI = "http://localhost:3000/product";
+// cartUserAPI = "http://localhost:3000/cartUser";
 
 let currentIndex = 0;
 
-const handleHeader = {
-    renderHeader: function () {
-        const html = `
-        <div class="container">
-                <div class="header-wrap">
-                    <span class="icon-menu__header">
-                        <i class="fa-solid fa-bars"></i>
-                    </span>
-                    <a href="../../../index.html" class="logo-link">
-                        <img src="../../assets/images/HomeIMG/logo1.png"/ alt="" class="logo-pages">
-                    </a>
-                    <ul class="list-pages ">
-                        <li class="item-page item-page__home">
-                            <a href="../../../index.html" class="item-label">Home</a>
-                        </li>
-                        <li class="item-page">
-                            <a href="../Intro/index.html" class="item-label">Giới thiệu</a>
-                        </li>
-                        <li class="item-page">
-                            <a href="../Product/index.html" class="item-label">Sản phẩm</a>
-                        </li>
-                        <li class="item-page">
-                            <a href="../Blogs/index.html" class="item-label">Blogs</a>
-                        </li>
-                        <li class="item-page">
-                            <a href="../Contact/index.html" class="item-label">Liên hệ</a>
-                        </li>
-                        <li class="item-page item-page__policies">
-                            <a href="../Policies/index.html" class="item-label">Chính Sách</a>
-                        </li>
-                    </ul>
-                    <ul class="list-actions">
-                        <li class="item-page__action item-page__action-icon">
-                        <a href="../Cart/index.html" class=" icon-cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </a>
-                        </li>
-                        <li class="item-page__action item-page__action-fragment ">
-                            <span class="icon-action__wrap">
-                                <i class="fa-solid fa-user"></i>
-                            </span>
-                            <div class="item-page__action-wrap">
-                                
-                                <div class="item-page__action__sign-in">
-                                    <a href="../SignIn/index.html" >Đăng nhập</a>
-                                </div>
-                                <a class="item-page__action__sign-up" href="../SignUp/index.html" >Đăng ký</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        `;
-        header.innerHTML = html;
-        return body.appendChild(header);
+// Function common
+const renderLoading = {
+    renderLoadingProduct: function () {
+        if (shoesAPI === "http://localhost:3000/product") {
+            var htmls = ` <h1> Chạy git bash:<br> npm run start-api để hiển thị sản phẩm</h1>`;
+        } else if (
+            shoesAPI === "https://hostapi-g350.onrender.com/api/product"
+        ) {
+            var htmls = `<div class="loading inner" data-text="Đang tải..."></div>`;
+        } else {
+            var htmls = `<h1> Get API thất bại</h1>`;
+        }
+        list.innerHTML = htmls;
     },
-    handleEventHeader: function () {
-        var btnMenu = document.querySelector(".icon-menu__header");
-        var listPage = document.querySelector(".list-pages");
-        var btnIconHeader = document.querySelector(".icon-action__wrap");
-        var wrapSign = document.querySelector(".item-page__action-wrap");
-        btnIconHeader.addEventListener("click", () => {
-            if (wrapSign.classList.contains("icon-action__wrap__active")) {
-                wrapSign.classList.remove("icon-action__wrap__active");
-            } else {
-                wrapSign.classList.add("icon-action__wrap__active");
-            }
-        });
-
-        btnMenu.addEventListener("click", () => {
-            if (listPage.classList.contains("list-pages__active")) {
-                listPage.classList.remove("list-pages__active");
-            } else {
-                listPage.classList.add("list-pages__active");
-            }
-        });
-    },
-    start: function () {
-        this.renderHeader();
-        this.handleEventHeader();
-    },
-};
-
-const handleFooter = {
-    renderFooter: function () {
-        const html = `
-       <div class="container">
-            <div class="footer">
-                <ul class="list-footer">
-                    <li class="item-footer item-footer__left">
-                        <span>
-                            Hotline: 0912528877<br/>
-                            9:00 - 18:00, Thứ Hai đến Thứ Sáu<br/>
-                            ballance&gara@gmail.com
-                        </span>
-                        <span>
-                            <a href="#!">
-                                <i class="icon-footer fa-brands fa-instagram"></i>
-                            </a>
-                            <a href="#!">
-                                <i class="icon-footer fa-brands fa-square-facebook"></i>
-                            </a>
-                        </span>
-                    </li>
-                    <li class="item-footer item-footer__center">
-                        <div class="item-footer__center-content">
-                            <label class="item-footer__center-label">Sản phẩm</label>
-                            <ul>
-                                <li><a href="../Product/index.html" class="">Sản Phẩm mới</a></li>
-                                <li><a href="../Product/index.html" class="">Sản phẩm nổi bật</a></li>
-                                <li><a href="../Product/index.html" class="">Bộ sưu tập Air Force One</a></li>
-                                <li><a href="../Product/index.html" class="">Thương hiệu nổi bật</a></li>
-                                <li><a href="../Product/index.html" class="">Sản phẩm khuyến mãi</a></li>
-                            </ul>
-                        </div>
-                        <div class="item-footer__center-content">
-                            <label class="item-footer__center-label">Contract With Us</label>
-                            <ul>
-                                <li><a href="../Contact/index.html" class="">Đặt hàng số lượng lớn</a></li>
-                                <li><a href="../Contact/index.html" class="">Khách hàng doanh nghiệp</a></li>
-                                <li><a href="../Contact/index.html" class="">Hợp tác phối hợp</a></li>
-                                <li><a href="../Contact/index.html" class="">Hợp tác doanh nghiệp</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="item-footer">
-                        <p class="item-footer__desc">
-                            Hợp tác doanh nghiệp<br/>
-                            CÔNG TY TNHH Balance & Gara<br/>
-                            Khu II, Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều,<br/>
-                            Thành phố  Cần Thơ, Việt Nam<br/>
-                            MST: 0317645769<br/>
-                            Giấy phép ĐKKD số 0317645769<br/>
-                            cấp ngày 12 tháng 01 năm 2023<br/>
-                        </p>
-                        <img src="../../assets/images/HomeIMG/logo_bct_hihi.webp" alt="" class="logo-footer">
-                    </li>
-                </ul>
-                <div class="list-footer__bottom">
-                    <div class="item-footer__bottom">
-                        <p class="item-footer__bottom-desc">
-                            copyright © 2024 • All Rights Reserved
-                        </p>
-                    </div>
-                    <div class="item-footer__bottom-center">
-                        <ul class="item-footer__bottom-list">
-                            <li>
-                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
-                                    Đổi trả
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
-                                    chính sách thanh toán
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
-                                    chính sách giao hàng
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
-                                    hướng dẫn mua hàng
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="item-footer__bottom-right">
-                        <ul class="item-footer__bottom-list">
-                            <li>
-                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
-                                    Điều Khoản Sử Dụng
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../Policies/index.html" class="item-footer__bottom-desc">
-                                    Chính Sách Bảo Mật
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-        footer.innerHTML = html;
-        return body.appendChild(footer);
-    },
-    renderBtn: function () {
-        const btnTurnBack = document.createElement("div");
-        body.setAttribute("id", "body");
-        const htmls = `
-            <a href="#body" class="btn__turn-back">
-                <i class="fa-solid fa-arrow-up-from-bracket"></i>
-            </a>
-        `;
-        btnTurnBack.innerHTML = htmls;
-        return body.appendChild(btnTurnBack);
-    },
-    start: function () {
-        this.renderFooter();
-        this.renderBtn();
+    renderLoadingCart: function () {
+        if (cartUserAPI === "http://localhost:3000/cartUser") {
+            var htmls = ` <h1> Chạy git bash:<br> npm run start-api để hiển thị sản phẩm</h1>`;
+        } else if (
+            cartUserAPI === "https://hostapi-g350.onrender.com/api/cartUser"
+        ) {
+            var htmls = `<div class="loading inner" data-text="Đang tải..."></div>`;
+        } else {
+            var htmls = `<h1> Get API thất bại</h1>`;
+        }
+        listCart.innerHTML = htmls;
     },
 };
 
@@ -242,37 +68,126 @@ function nextSlide() {
 function prevSlide() {
     showSlide(currentIndex - 1);
 }
-// Ảnh hàng
-const HomePageJS = {
-    handleEvent: function () {
-        setInterval(nextSlide, 3500);
-        document.querySelectorAll(".product-img img").forEach((img) => {
-            const originalSrc = img.src;
-            const hoverSrc = img.getAttribute("data-hover");
-            img.addEventListener("mouseover", () => {
-                img.src = hoverSrc;
-            });
-            img.addEventListener("mouseout", () => {
-                img.src = originalSrc;
-            });
-        });
 
-        document.querySelectorAll(".box-product .color-dot").forEach((dot) => {
-            dot.addEventListener("click", () => {
-                const newSrc = dot.getAttribute("data-img-src");
-                dot.closest(".box-product")
-                    .querySelectorAll(".product-img img")
-                    .forEach((img) => {
-                        img.src = newSrc;
-                    });
-            });
-        });
-        nextBtn.addEventListener("click", nextSlide);
-        prevBtn.addEventListener("click", prevSlide);
-    },
-};
+function getItem(id, data, callback) {
+    var options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    };
+    fetch(shoesAPI, options)
+        .then(function (response) {
+            return response.json();
+        })
+        .then((product) => product[id].page[data - 1])
+        .then(callback);
+}
 
-// Đổi ảnh khi click vào các chấm màu
+function addItem(data, callback) {
+    var options = {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    };
+
+    fetch(cartUserAPI, options)
+        .then(function (response) {
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Add Item", data);
+            toastMessage();
+            ProductJS.getCartAPI(ProductJS.renderIconQuantityCart);
+        })
+        .then(callback);
+}
+function DeleteItem(data, callback) {
+    var options = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    };
+    fetch(cartUserAPI + "/" + data, options)
+        .then(function (response) {
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Delete: ", data);
+            CartPageJS.start();
+        })
+        .then(callback);
+}
+function handleOther(data) {
+    addItem(data);
+}
+
+// Sử dụng debounce cho thao tác xóa để tránh gửi quá nhiều yêu cầu
+function debounce(func, delay) {
+    let timer;
+    return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+function handleDeleteItem(data) {
+    debounce(DeleteItem(data.id), 300);
+}
+
+function toastMessage() {
+    const contentToastMsg = document.querySelector(".toastMsg");
+    const duration = 3000;
+    const delay = (duration / 1000).toFixed(2);
+    const htmls = `
+        <span class="toastMsg__icon-wrap"> <i class="fa-solid fa-circle-check toastMsg__icon"></i></span>
+        <h4 class="toastMsg__heading">
+            Đã thêm sản phẩm vào giỏ hàng
+        </h4>
+    `;
+    contentToastMsg.innerHTML = htmls;
+    const autoRemoveId = setTimeout(function () {
+        toastMsg.removeChild(contentToastMsg);
+    }, duration + 1000);
+    toastMsg.appendChild(contentToastMsg);
+    toastMsg.classList.add("active");
+    contentToastMsg.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+    clearTimeout(autoRemoveId);
+}
+
+function calPrice(data) {
+    let total = 0;
+    data.map((item) => {
+        total += parseInt(item.price.split(/\.|000VND/).join(""));
+    });
+    usingToPrintTotal = String(total);
+    if (total >= 1000 && total < 10000) {
+        usingToPrintTotal =
+            usingToPrintTotal.substring(0, 1) +
+            "." +
+            usingToPrintTotal.substring(1) +
+            ".000 VND";
+    } else if (total >= 10000 && total < 100000) {
+        usingToPrintTotal =
+            usingToPrintTotal.substring(0, 2) +
+            "." +
+            usingToPrintTotal.substring(2) +
+            ".000 VND";
+    } else if (total >= 100000) {
+        usingToPrintTotal =
+            usingToPrintTotal.substring(0, 3) +
+            "." +
+            usingToPrintTotal.substring(3) +
+            ".000 VND";
+    } else if (total === 0) {
+        usingToPrintTotal = "0 VND";
+    } else {
+        usingToPrintTotal = String(total) + ".000 VND";
+    }
+    return usingToPrintTotal;
+}
 
 // DANH
 function Validator(options) {
@@ -471,12 +386,249 @@ Validator.isConfirm = function (selector, getconfirm, message) {
         },
     };
 };
+
+const handleHeader = {
+    renderHeader: function () {
+        const html = `
+        <div class="container">
+                <div class="header-wrap">
+                    <span class="icon-menu__header">
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                    <a href="../../../index.html" class="logo-link">
+                        <img src="../../assets/images/HomeIMG/logo1.png"/ alt="" class="logo-pages">
+                    </a>
+                    <ul class="list-pages ">
+                        <li class="item-page item-page__home">
+                            <a href="../../../index.html" class="item-label">Home</a>
+                        </li>
+                        <li class="item-page">
+                            <a href="../Intro/index.html" class="item-label">Giới thiệu</a>
+                        </li>
+                        <li class="item-page">
+                            <a href="../Product/index.html" class="item-label">Sản phẩm</a>
+                        </li>
+                        <li class="item-page">
+                            <a href="../Blogs/index.html" class="item-label">Blogs</a>
+                        </li>
+                        <li class="item-page">
+                            <a href="../Contact/index.html" class="item-label">Liên hệ</a>
+                        </li>
+                        <li class="item-page item-page__policies">
+                            <a href="../Policies/index.html" class="item-label">Chính Sách</a>
+                        </li>
+                    </ul>
+                    <ul class="list-actions">
+                        <li class="item-page__action item-page__action-icon">
+                        <a href="../Cart/index.html" class=" icon-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                        </li>
+                        <li class="item-page__action item-page__action-fragment ">
+                            <span class="icon-action__wrap">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <div class="item-page__action-wrap">
+                                
+                                <div class="item-page__action__sign-in">
+                                    <a href="../SignIn/index.html" >Đăng nhập</a>
+                                </div>
+                                <a class="item-page__action__sign-up" href="../SignUp/index.html" >Đăng ký</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        `;
+        header.innerHTML = html;
+        return body.appendChild(header);
+    },
+    handleEventHeader: function () {
+        var btnMenu = document.querySelector(".icon-menu__header");
+        var listPage = document.querySelector(".list-pages");
+        var btnIconHeader = document.querySelector(".icon-action__wrap");
+        var wrapSign = document.querySelector(".item-page__action-wrap");
+        btnIconHeader.addEventListener("click", () => {
+            if (wrapSign.classList.contains("icon-action__wrap__active")) {
+                wrapSign.classList.remove("icon-action__wrap__active");
+            } else {
+                wrapSign.classList.add("icon-action__wrap__active");
+            }
+        });
+
+        btnMenu.addEventListener("click", () => {
+            if (listPage.classList.contains("list-pages__active")) {
+                listPage.classList.remove("list-pages__active");
+            } else {
+                listPage.classList.add("list-pages__active");
+            }
+        });
+    },
+    start: function () {
+        this.renderHeader();
+        this.handleEventHeader();
+    },
+};
+
+const handleFooter = {
+    renderFooter: function () {
+        const html = `
+       <div class="container">
+            <div class="footer">
+                <ul class="list-footer">
+                    <li class="item-footer item-footer__left">
+                        <span>
+                            Hotline: 0912528877<br/>
+                            9:00 - 21:30, (T2-T7)<br/>
+                            Email: ballance&gara@gmail.com
+                        </span>
+                        <span>
+                            <a href="#!">
+                                <i class="icon-footer fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#!">
+                                <i class="icon-footer fa-brands fa-square-facebook"></i>
+                            </a>
+                        </span>
+                    </li>
+                    <li class="item-footer item-footer__center">
+                        <div class="item-footer__center-content">
+                            <label class="item-footer__center-label">Sản phẩm</label>
+                            <ul>
+                                <li><a href="../Product/index.html" class="">Sản Phẩm mới</a></li>
+                                <li><a href="../Product/index.html" class="">Sản phẩm nổi bật</a></li>
+                                <li><a href="../Product/index.html" class="">Bộ sưu tập Air Force One</a></li>
+                                <li><a href="../Product/index.html" class="">Thương hiệu nổi bật</a></li>
+                                <li><a href="../Product/index.html" class="">Sản phẩm khuyến mãi</a></li>
+                            </ul>
+                        </div>
+                        <div class="item-footer__center-content">
+                            <label class="item-footer__center-label">Contract With Us</label>
+                            <ul>
+                                <li><a href="../Contact/index.html" class="">Đặt hàng số lượng lớn</a></li>
+                                <li><a href="../Contact/index.html" class="">Khách hàng doanh nghiệp</a></li>
+                                <li><a href="../Contact/index.html" class="">Hợp tác phối hợp</a></li>
+                                <li><a href="../Contact/index.html" class="">Hợp tác doanh nghiệp</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item-footer">
+                        <p class="item-footer__desc">
+                            Hợp tác doanh nghiệp<br/>
+                            CÔNG TY TNHH Balance & Gara<br/>
+                            Khu II, Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều,<br/>
+                            Thành phố  Cần Thơ, Việt Nam<br/>
+                            MST: 0317645769<br/>
+                            Giấy phép ĐKKD số 0317645769<br/>
+                            cấp ngày 12 tháng 01 năm 2023<br/>
+                        </p>
+                        <img src="../../assets/images/HomeIMG/logo_bct_hihi.webp" alt="" class="logo-footer">
+                    </li>
+                </ul>
+                 <div class="list-footer__bottom">
+            <div class="item-footer__bottom">
+              <p class="item-footer__bottom-desc">
+                copyright © 2024 • All Rights Reserved
+              </p>
+            </div>
+            <div class="item-footer__bottom-center">
+              <ul class="item-footer__bottom-list">
+                <li>
+                  <a href="../Policies/index.html#doitra" class="item-footer__bottom-desc">
+                    Đổi trả
+                  </a>
+                </li>
+                <li>
+                  <a href="../Policies/index.html#thanhtoan" class="item-footer__bottom-desc">
+                    Chính sách thanh toán
+                  </a>
+                </li>
+                <li>
+                  <a href="../Policies/index.html#vanchuyen" class="item-footer__bottom-desc">
+                    Chính sách vận chuyển
+                  </a>
+                </li>
+                <li>
+                  <a href="../Policies/index.html#muahang" class="item-footer__bottom-desc">
+                    Hướng dẫn mua hàng
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="item-footer__bottom-right">
+              <ul class="item-footer__bottom-list">
+                <li>
+                  <a href="../Policies/index.html#uudai" class="item-footer__bottom-desc">
+                    Ưu đãi thành viên mới
+                  </a>
+                </li>
+                <li>
+                  <a href="../Policies/index.html#baohanh" class="item-footer__bottom-desc">
+                    Chính Sách bảo hành
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+            </div>
+        </div>
+    `;
+        footer.innerHTML = html;
+        return body.appendChild(footer);
+    },
+    renderBtn: function () {
+        const btnTurnBack = document.createElement("div");
+        body.setAttribute("id", "body");
+        const htmls = `
+            <a href="#body" class="btn__turn-back">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </a>
+        `;
+        btnTurnBack.innerHTML = htmls;
+        return body.appendChild(btnTurnBack);
+    },
+    start: function () {
+        this.renderFooter();
+        this.renderBtn();
+    },
+};
+
+// Ảnh hàng
+const HomePageJS = {
+    handleEvent: function () {
+        setInterval(nextSlide, 3500);
+        document.querySelectorAll(".product-img img").forEach((img) => {
+            const originalSrc = img.src;
+            const hoverSrc = img.getAttribute("data-hover");
+            img.addEventListener("mouseover", () => {
+                img.src = hoverSrc;
+            });
+            img.addEventListener("mouseout", () => {
+                img.src = originalSrc;
+            });
+        });
+
+        document.querySelectorAll(".box-product .color-dot").forEach((dot) => {
+            dot.addEventListener("click", () => {
+                const newSrc = dot.getAttribute("data-img-src");
+                dot.closest(".box-product")
+                    .querySelectorAll(".product-img img")
+                    .forEach((img) => {
+                        img.src = newSrc;
+                    });
+            });
+        });
+        nextBtn.addEventListener("click", nextSlide);
+        prevBtn.addEventListener("click", prevSlide);
+    },
+};
+
 //----------------//
 //Contact
 const ContactJS = {
     checkFormContact: function () {
         const mainmodal = document.querySelector(".main-modal");
-        const closeBtn= document.querySelector(".btn button");
+        const closeBtn = document.querySelector(".btn button");
         mainmodal.classList.add("active");
         mainmodal.style.opacity = "1";
 
@@ -491,129 +643,6 @@ const ContactJS = {
 
 // ---------------//
 // ProductPage & CartPage
-
-function getItem(id, data, callback) {
-    var options = {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    };
-    fetch(shoesAPI, options)
-        .then(function (response) {
-            return response.json();
-        })
-        .then((product) => product[id].page[data - 1])
-        .then(callback);
-}
-
-function addItem(data, callback) {
-    var options = {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json",
-        },
-    };
-
-    fetch(cartUserAPI, options)
-        .then(function (response) {
-            return response.json();
-        })
-        .then((data) => {
-            console.log("Add Item", data);
-            toastMessage();
-            ProductJS.getCartAPI(ProductJS.renderIconQuantityCart);
-        })
-        .then(callback);
-}
-function DeleteItem(data, callback) {
-    var options = {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    };
-    fetch(cartUserAPI + "/" + data, options)
-        .then(function (response) {
-            return response.json();
-        })
-        .then((data) => {
-            console.log("Delete: ", data);
-            CartPageJS.start();
-        })
-        .then(callback);
-}
-function handleOther(data) {
-    addItem(data);
-}
-
-function debounce(func, delay) {
-    let timer;
-    return function (...args) {
-        clearTimeout(timer);
-        timer = setTimeout(() => func.apply(this, args), delay);
-    };
-}
-function handleDeleteItem(data) {
-    // DeleteItem(data.id);
-    debounce(DeleteItem(data.id), 300);
-}
-
-// Sử dụng debounce cho thao tác xóa để tránh gửi quá nhiều yêu cầu
-
-function toastMessage() {
-    const contentToastMsg = document.querySelector(".toastMsg");
-    const duration = 3000;
-    const delay = (duration / 1000).toFixed(2);
-    const htmls = `
-        <span class="toastMsg__icon-wrap"> <i class="fa-solid fa-circle-check toastMsg__icon"></i></span>
-        <h4 class="toastMsg__heading">
-            Đã thêm sản phẩm vào giỏ hàng
-        </h4>
-    `;
-    contentToastMsg.innerHTML = htmls;
-    const autoRemoveId = setTimeout(function () {
-        toastMsg.removeChild(contentToastMsg);
-    }, duration + 1000);
-    toastMsg.appendChild(contentToastMsg);
-    toastMsg.classList.add("active");
-    contentToastMsg.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
-    clearTimeout(autoRemoveId);
-}
-
-function calPrice(data) {
-    let total = 0;
-    data.map((item) => {
-        total += parseInt(item.price.split(/\.|000VND/).join(""));
-    });
-    usingToPrintTotal = String(total);
-    if (total >= 1000 && total < 10000) {
-        usingToPrintTotal =
-            usingToPrintTotal.substring(0, 1) +
-            "." +
-            usingToPrintTotal.substring(1) +
-            ".000 VND";
-    } else if (total >= 10000 && total < 100000) {
-        usingToPrintTotal =
-            usingToPrintTotal.substring(0, 2) +
-            "." +
-            usingToPrintTotal.substring(2) +
-            ".000 VND";
-    } else if (total >= 100000) {
-        usingToPrintTotal =
-            usingToPrintTotal.substring(0, 3) +
-            "." +
-            usingToPrintTotal.substring(3) +
-            ".000 VND";
-    } else if (total === 0) {
-        usingToPrintTotal = "0 VND";
-    } else {
-        usingToPrintTotal = String(total) + ".000 VND";
-    }
-    return usingToPrintTotal;
-}
-
 const ProductJS = {
     getProductAPI: function (callback, id) {
         console.log(shoesAPI);
@@ -656,6 +685,7 @@ const ProductJS = {
         });
         list.innerHTML = html.join("");
     },
+
     renderIconQuantityCart: function (data) {
         var IconCart = document.querySelector(".icon-cart");
         posIconCart.setAttribute("class", ".item-page__action-icon");
@@ -714,7 +744,6 @@ const CartPageJS = {
         IconCart.appendChild(posIconCart);
     },
     renderCart: function (data) {
-        var listCart = document.querySelector(".list-item__cart");
         if (data.length !== 0) {
             const htmls = data.map((item) => {
                 return `
